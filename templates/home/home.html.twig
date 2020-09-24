@@ -103,15 +103,15 @@
                     <h4 class="pb-2">Services proposés</h4>
                     <div class="divider"></div>
                     <p class="p-3"> diplômés et ayant une carte professionnelle de coach sportif. formation PSC1 (Prévention et secours civique niveau 1)</p>
-                    <a href="views/reservation.php" class="bouton1">réservé</a>
+                    <a href="{{path ('booking') }}" class="bouton1">réservé</a>
                 </div>
             </div> 
         </section>
         <section id="service-image">
-            <div class="container">
-                <div class="row">
-                    <div class="pad-service col-md-4">
-                        <a href="views/reservation.php">
+            <a href="{{ path('booking') }}">
+                <div class="container">
+                    <div class="row">
+                        <div class="pad-service col-md-4">
                             <div class="scale-img card bg-dark text-white border border-success">
                                 <img src="{{ asset('img/jogging-2343558_1280.jpg') }}"  class="card-img" alt="...">
                                 <div class="card-img-overlay overflow-auto">
@@ -119,10 +119,8 @@
                                     <p class="card-text ">Pour vous faire battre le coeur à cent à l'heure, stimuler votre rythme cardiaque et renforcer tout votre système cardio-vasculaire. Selon votre rythme cardiaque propre, les exercices que vous ferez seront plus ou moins intenses..</p>
                                 </div>
                             </div>
-                        </a>
-                    </div>
-                    <div class="pad-service col-md-4">
-                        <a href="views/reservation.php">
+                        </div>
+                        <div class="pad-service col-md-4">
                             <div class="scale-img card bg-dark text-white border border-success">
                                 <img src="{{ asset('img/sport-2250970_1280.jpg') }}" class="card-img" alt="...">
                                 <div class="card-img-overlay overflow-auto">
@@ -130,10 +128,8 @@
                                     <p class="card-text">La tonification musculaire est une pratique sportive destinée à augmenter la tonicité d'un muscle, c'est à dire sa résistance et son élasticité.</p>
                                 </div>
                             </div>
-                        </a>
-                    </div>
-                    <div class="pad-service col-md-4">
-                        <a href="views/reservation.php">
+                        </div>
+                        <div class="pad-service col-md-4">
                             <div class="scale-img card bg-dark text-white border border-success">
                                 <img src="{{ asset('img/kettle-bell-5434989_1280.jpg') }}" class="card-img" alt="...">
                                 <div class="card-img-overlay overflow-auto">
@@ -141,12 +137,10 @@
                                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
-                </div>
-                <div class="row justify-content-end">
-                    <div class="pad-service col-md-4">
-                        <a href="views/reservation.php">
+                    <div class="row justify-content-end">
+                        <div class="pad-service col-md-4">
                             <div class="scale-img card bg-dark text-white border border-success">
                                 <img src="{{ asset('img/arm-workout.jpg') }}" class="card-img" alt="...">
                                 <div class="card-img-overlay overflow-auto">
@@ -154,10 +148,8 @@
                                     <p class="card-text">This.</p>
                                 </div>
                             </div>
-                        </a>
-                    </div>
-                    <div class="pad-service col-md-4">
-                        <a href="views/reservation.php">
+                        </div>
+                        <div class="pad-service col-md-4">
                             <div class="scale-img card bg-dark text-white border border-success">
                                 <img src="{{ asset('img/kettlebell-3290296_1280.jpg') }}" class="card-img" alt="...">
                                 <div class="card-img-overlay overflow-auto">
@@ -165,23 +157,21 @@
                                     <p class="card-text"> La préparation physique a pour objectif de servir la discipline que vous pratiquez. Elle permettra de développer vos qualités physiques et ainsi d’optimiser vos performances.</p>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
-                </div>
-                <div class="row justify-content-end">
-                    <div class="pad-service col-md-4">
-                        <a href="views/reservation.php">
+                    <div class="row justify-content-end">
+                        <div class="pad-service col-md-4">
                             <div class="scale-img card bg-dark text-white border border-success">
                                 <img src="{{ asset('img/training-828732_1280.jpg') }}" class="card-img" alt="...">
                                 <div class="card-img-overlay overflow-auto">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <h5 class="card-title">TRX</h5>
+                                    <p class="card-text">Développé par un commando de l’US Navy, le TRX ou Suspension Training permet par un jeu de sangles d’utiliser le poids de son propre corps comme un partenaire d’entraînement.</p>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
-                </div>
-            </div>       
+                </div> 
+            </a>      
         </section>
 
         {# ----------------
