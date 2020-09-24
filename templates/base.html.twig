@@ -30,7 +30,7 @@
         <header>
             <nav class="navbar  navbar-expand-md fixed-top navbar-dark bg-dark" id="mainNav">
                 <div class="container">
-                    <a class="navbar-brand" href="../index.php">Bienvenue</a>
+                    <a class="navbar-brand" href="{{path('home') }}">Bienvenue</a>
                     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
                         <span></span>
                         <span></span>
@@ -39,16 +39,16 @@
                     <div class="navbar-collapse collapse justify-content-end" id="menu">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link active test" href="#presentation">Accueil</a>
+                                <a class="nav-link active test" href="{{path ('home', {'_fragment': 'presentation'}) }}">Accueil</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link test" href="#about">A Propos</a>
+                                <a class="nav-link test" href="{{path ('home') }}#about">A Propos</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link test" href="#service">Services</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/views/reservation.php">Réserver</a>
+                                <a class="nav-link" href="{{path('booking') }}">Réserver</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link test" href="#contact">Contact</a>
