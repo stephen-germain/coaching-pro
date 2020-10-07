@@ -2,18 +2,23 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\ServicesRepository;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class BookingController extends AbstractController
 {
     /**
      * @Route("/booking", name="booking")
      */
-    public function index()
+    public function index(ServicesRepository $servicesRepository)
     {
+        $services = $servicesRepository->findAll();
+
         return $this->render('booking/booking.html.twig', [
-            'controller_name' => 'BookingController',
+            'services' => $services,
         ]);
+           
+    
     }
 }

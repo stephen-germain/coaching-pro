@@ -15,9 +15,9 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
         
         <!-- Link ccs and js -->
-        <link rel="stylesheet" href={{ asset("css/style.css") }}/>
+        {# <link rel="stylesheet" href={{ asset("css/style.css") }}/> #}
         <link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
-        <script src={{ asset("js/script.js") }}></script>
+        <script src="{{ asset("js/script.js") }}"></script>
         {% block stylesheets %}{% endblock %}
     </head>
 
@@ -42,16 +42,16 @@
                                 <a class="nav-link active test" href="{{path ('home', {'_fragment': 'presentation'}) }}">Accueil</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link test" href="{{path ('home') }}#about">A Propos</a>
+                                <a class="nav-link test" href="{{path('home')}}#about">A Propos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link test" href="#service">Services</a>
+                                <a class="nav-link test" href="{{path('home')}}#service">Services</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{path('booking') }}">Réserver</a>
+                                <a class="nav-link" href="{{path('booking')}}">Réserver</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link test" href="#contact">Contact</a>
+                                <a class="nav-link test" href="{{path('home')}}#contact">Contact</a>
                             </li>
                         </ul>
                     </div>
