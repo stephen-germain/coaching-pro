@@ -53,6 +53,21 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{path('home')}}#contact">Contact</a>
                             </li>
+                            {% if not app.user %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{path('app_register')}}">Inscription</a>
+                                </li>
+                            {% endif %}
+
+                            {% if not app.user %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{path('app_login')}}">Connexion</a>
+                                </li>
+                            {% else %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{path('app_logout')}}">déconnexion</a>
+                                </li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>
