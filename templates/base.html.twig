@@ -30,7 +30,13 @@
         <header>
             <nav class="navbar  navbar-expand-md fixed-top navbar-dark bg-dark" id="mainNav">
                 <div class="container">
-                    <a class="navbar-brand" href="{{path('home') }}">Bienvenue</a>
+                    <a class="navbar-brand" href="{{path('home') }}">Bienvenue
+                    
+                    {% if app.user%}
+                        {{app.user.name}}
+                
+                    {% endif %}
+                    </a>
                     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
                         <span></span>
                         <span></span>
