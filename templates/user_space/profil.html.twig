@@ -1,0 +1,44 @@
+{% extends 'baseUser.html.twig' %}
+
+{% block title %}Profil{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <h2>Vos informations</h2>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <table class="table">
+               <thead>
+                   <tr>
+                       <th></th>
+                       <th></th>
+                       <th></th>
+                   </tr>
+               </thead>
+               <tbody>
+                   <tr>
+                       <td scope="row"></td>
+                       <td>Prénom</td>
+                       <td>{{ app.user.name }}</td>
+                   </tr>
+                   <tr>
+                       <td scope="row"></td>
+                       <td>Email</td>
+                       <td>{{ app.user.email }}</td>
+                   </tr>
+                    <tr>
+                       <td scope="row"></td>
+                       <td><a href="#">Modifier</a></td>
+                       <td><a href="#">Supprimer</a></td>
+                   </tr>
+               </tbody>
+           </table> 
+        
+        
+        
+            </div>
+        </div>
+    </div>
+{% endblock %}

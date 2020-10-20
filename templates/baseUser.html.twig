@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Coach Sportif - {% block title %}base{% endblock %}</title>
+
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@1.0.0-beta.2/dist/css/axentix.min.css">
+  </head>
+
+  <body class="layout with-sidenav">
+    <header>
+      <nav class="navbar shadow-1 airforce dark-4 txt-white txt-light-2">
+        <a href="#" target="_blank" class="navbar-brand">Axentix</a>
+        <div class="navbar-menu ml-auto">
+          <a class="navbar-link" href="{{path('home') }}">Accueil</a>
+          <a class="navbar-link" href="{{path('home')}}#about">A propos</a>
+          <a class="navbar-link" href="{{path('home')}}#service">Services</a>
+          <a class="navbar-link" href="{{path('booking')}}">Réserver</a>                             
+          <a class="navbar-link" href="{{path('home')}}#contact">Contact</a>
+          <a class="navbar-link" href="{{path('app_logout')}}">déconnexion</a>
+        </div>
+      </nav>
+    </header>
+
+    <div id="example-sidenav" data-ax="sidenav" class="sidenav shadow-1 large fixed white">
+      {# <div class="sidenav-header">
+        <button data-target="example-sidenav" class="sidenav-trigger"><i class="fas fa-times"></i></button>
+        <img class="sidenav-logo dropshadow-1" src="your_img_path" alt="Logo" />
+      </div> #}
+      <a href="{{ path('user_space') }}" class="sidenav-link active">Accueil</a>
+      <a href="{{ path('user_profil') }}" class="sidenav-link">Mon profil</a>
+      <a href="#" class="sidenav-link">Mes services</a>
+    </div>
+
+    <main>
+    {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+      <!-- Code here the main content -->
+      <button data-target="example-sidenav"
+        class="btn rounded-1 press amaranth dark-1 sidenav-trigger hide-md-up">
+          Open sidenav
+      </button>
+    </main>
+
+    <footer class="footer success">
+      Copyright © 2020 - Stephen Germain
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axentix@1.0.0-beta.2/dist/js/axentix.min.js"></script>
+  </body>
+</html>
