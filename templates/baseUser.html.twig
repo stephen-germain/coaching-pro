@@ -24,6 +24,8 @@
       </nav>
     </header>
 
+    
+
     <div id="example-sidenav" data-ax="sidenav" class="sidenav shadow-1 large fixed white">
       {# <div class="sidenav-header">
         <button data-target="example-sidenav" class="sidenav-trigger"><i class="fas fa-times"></i></button>
@@ -35,7 +37,17 @@
     </div>
 
     <main>
-    {% block body %}{% endblock %}
+    {% for label, messages in app.flashes(['success', 'danger']) %}
+            {% for message in messages %}
+                <div class="flash-{{ label }} p-3 fixed-top bg-{{ label }} text-white text-center">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    {% block body %}
+    
+    {% endblock %}
+
         {% block javascripts %}{% endblock %}
       <!-- Code here the main content -->
       <button data-target="example-sidenav"
