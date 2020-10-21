@@ -59,31 +59,16 @@ class UserProfilController extends AbstractController
      * @Route("/profil/delete", name="profil_delete")
      */
     public function profilDelete(){
-        // $user = $this->getUser();
-
-        // throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
-
-        // $manager = $this->getDoctrine()->getManager();
-        // $manager->remove($user);
-        // $manager->flush();
-
-        // $this->addFlash(
-        //     'danger',
-        //     'Le profil à bien été supprimée'
-        // );
-
-        // return $this->render('user_space/deleteProfil.html.twig');
-
         $user = $this->getUser();
-$this->container->get('security.token_storage')->setToken(null);
+        $this->container->get('security.token_storage')->setToken(null);
 
         $manager = $this->getDoctrine()->getManager();
         $manager->remove($user);
         $manager->flush();
 
-// Ceci ne fonctionne pas avec la création d'une nouvelle session !
-$this->addFlash('success', 'Votre compte utilisateur a bien été supprimé !'); 
+        // Ceci ne fonctionne pas avec la création d'une nouvelle session !
+        $this->addFlash('success', 'Votre compte utilisateur a bien été supprimé !'); 
 
-return $this->render('user_space/deleteProfil.html.twig');
+        return $this->render('user_space/deleteProfil.html.twig');
     }
 }

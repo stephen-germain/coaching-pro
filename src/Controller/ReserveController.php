@@ -6,16 +6,16 @@ use App\Repository\ServicesRepository;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class BookingController extends AbstractController
+class ReserveController extends AbstractController
 {
     /**
-     * @Route("/booking", name="booking")
+     * @Route("/reserve", name="reserve")
      */
     public function index(ServicesRepository $servicesRepository)
     {
         $services = $servicesRepository->findAll();
 
-        return $this->render('booking/booking.html.twig', [
+        return $this->render('reserve/reserve.html.twig', [
             'services' => $services,
         ]);
            
