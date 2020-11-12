@@ -1,16 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Nouvelle réservation{% endblock %}
+{% block title %}Ma nouvelle réservation{% endblock %}
 
 {% block body %}
     <div class="container pt-5">
         <div class="row">
             <div class="col-4 offset-4 py-5">
-                <h1>Nouvelle réservation</h1>
+                <h1>Ma nouvelle réservation</h1>
 
                 {{ include('booking/_form.html.twig') }}
 
-                <a href="{{ path('booking_index') }}">Revenir à la liste</a>
+                <a href="{{ path('user_booking') }}">Revenir à la liste</a>
             </div>
         </div>
     </div>

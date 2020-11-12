@@ -39,7 +39,7 @@ class UserBookingController extends AbstractController
             return $this->redirectToRoute('user_booking');
         }
 
-        return $this->render('booking/new.html.twig', [
+        return $this->render('user_space/newBooking.html.twig', [
             'booking' => $booking,
             'form' => $form->createView(),
         ]);
@@ -60,7 +60,7 @@ class UserBookingController extends AbstractController
             return $this->redirectToRoute('user_booking');
         }
 
-        return $this->render('booking/edit.html.twig', [
+        return $this->render('user_space/editBooking.html.twig', [
             'booking' => $booking,
             'form' => $form->createView(),
         ]);
