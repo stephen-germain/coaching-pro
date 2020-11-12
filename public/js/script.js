@@ -1,7 +1,7 @@
 //animation for scrollTop
 $(function()
 {
-     $(" #presentation a, footer a").on("click", function(event)
+     $(".test a, #presentation a, footer a").on("click", function(event)
      {
             event.preventDefault();
             var hash = this.hash;
@@ -47,3 +47,4 @@ $(function(){
 		}
 	})
 })
+

@@ -1,11 +1,11 @@
 {% extends 'baseUser.html.twig' %}
 
-{% block title %}Profil{% endblock %}
+{% block title %}Reservation{% endblock %}
 
 {% block body %}
     <div class="container">
         <div class="row">
-            <h2>Vos informations</h2>
+            <h2>Vos Réservations</h2>
         </div>
         <div class="row">
             <div class="col-4">
@@ -21,7 +21,7 @@
                    <tr>
                        <td scope="row"></td>
                        <td>Prénom</td>
-                       <td>{{ app.user.name }}</td>
+                       <td>{{ booking.users }}</td>
                    </tr>
                    <tr>
                        <td scope="row"></td>
