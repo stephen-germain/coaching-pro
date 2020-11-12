@@ -8,6 +8,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
 class BookingType extends AbstractType
@@ -31,10 +32,20 @@ class BookingType extends AbstractType
                 'format' => 'hh:mm'
             ])
 
-            ->add('title', EntityType::class, [
-                "class" => Services::class,
-                'choice_label' => 'activity',
-                'multiple' => true
+            // ->add('title', EntityType::class, [
+            //     "class" => Services::class,
+            //     'choice_label' => 'activity',
+            //     'multiple' => true
+            // ])
+            ->add ('title', ChoiceType::class, [
+                'choices' => [
+                    'cardio-training' => 'cardio-training',
+                    'tonification musculaire' => 'tonification musculaire',
+                    'cross-training' => 'cross-training',
+                    'prise de masse' => 'prise de masse',
+                    'préparation physique' => 'préparation physique',
+                    'TRX' => 'TRX',
+                ]
             ])
         ;
     }

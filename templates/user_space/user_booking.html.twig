@@ -12,30 +12,25 @@
                 <table class="table">
                 <thead>
                     <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th scope ="col">Jour</th>
+                        <th scope ="col">Heure</th>
+                        <th scope ="col">Activité</th>
+                        <th scope ="col">Action</th>
                     </tr>
                 </thead>
                <tbody>
+                {% for test in app.user.bookings %}
                    <tr>
-                       <td scope="row"></td>
-                       <td>Prénom</td>
-                       <td>{{ booking.users }}</td>
-                   </tr>
-                   <tr>
-                       <td scope="row"></td>
-                       <td>Email</td>
-                       <td>{{ app.user.email }}</td>
-                   </tr>
-                    <tr>
-                       <td scope="row"></td>
-                       <td><a href="{{ path('profil_update') }}">Modifier</a></td>
-                       <td><a href="{{ path('profil_delete') }}">Supprimer</a></td>
+                       <td>{{ test.beginAt|date('Y-m-d') }}</td>
+                       <td>{{ test.TimeAt|date('H:i:s') }}</td>
+                       <td>{{ test.title }}</td>
+                       <td><a href="{{ path('user_booking_edit', {'id': test.id}) }}">Modifier</a></td>
+                       <td><a href="{{ path('user_booking_delete', {'id': test.id}) }}">Supprimer</a></td>
+                       {% endfor %}
                    </tr>
                </tbody>
            </table> 
-        
+         <a href="{{ path('user_booking_new') }}">Ajouter une réservation</a>
         
         
             </div>
