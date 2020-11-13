@@ -1,0 +1,19 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Nouveau service{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-2">
+
+                <h1 class="pt-5 text-center">Les services</h1>
+
+                {{ form_start(formService) }}
+                {{ form_end(formService) }}
+            </div>
+        </div>
+    </div>
+         
+
+{% endblock %}
