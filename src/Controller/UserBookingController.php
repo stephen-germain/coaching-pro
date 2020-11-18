@@ -78,7 +78,7 @@ class UserBookingController extends AbstractController
 
         $this->addFlash(
             'success',
-            'La maison a bien été supprimée'
+            'La réservation a bien été supprimée'
         );
 
         return $this->redirectToRoute('user_booking');

@@ -28,11 +28,6 @@ class Booking
     private $endAt;
 
     /**
-     * @ORM\Column(type="time")
-     */
-    private $timeAt;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $title;
@@ -68,18 +63,6 @@ class Booking
     public function setEndAt(?\DateTimeInterface $endAt): self
     {
         $this->endAt = $endAt;
-
-        return $this;
-    }
-
-    public function getTimeAt(): ?\DateTimeInterface
-    {
-        return $this->timeAt;
-    }
-
-    public function setTimeAt(\DateTimeInterface $timeAt): self
-    {
-        $this->timeAt = $timeAt;
 
         return $this;
     }

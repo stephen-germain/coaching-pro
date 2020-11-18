@@ -43,7 +43,7 @@
                             <td>{{service.activity}}</td>
                             <td>{{service.price}} €</td>
                             <td>{{service.time}} min</td>
-                            <td><a href="#">Réserver</a></td>
+                            <td><a href="{{ path('booking_calendar') }}">Réserver</a></td>
                         </tr>
                         {% endfor %}
                     </tbody>

@@ -18,4 +18,23 @@ class AdminBookingController extends AbstractController
             'bookings' => $bookingRepository->findAll(),
         ]);
     }
+
+    /**
+     * @Route("/admin/booking/delete-{id}", name="admin_booking_delete")
+     */
+    public function deleteBooking(BookingRepository $booking, $id): Response
+    {
+        $booking = $booking->find($id);
+
+        $manager = $this->getDoctrine()->getManager();
+        $manager->remove($booking);
+        $manager->flush();
+
+        $this->addFlash(
+            'success',
+            'La réservation a bien été supprimée'
+        );
+
+        return $this->redirectToRoute('admin_booking');
+    }
 }

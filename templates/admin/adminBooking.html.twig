@@ -23,12 +23,13 @@
                     {% for booking in bookings %}
                         <tr>
                             <td>{{ booking.id }}</td>
-                            <td>{{ booking.beginAt ? booking.beginAt|date('Y-m-d H:i:s') : '' }}</td>
-                            <td>{{ booking.timeAt ? booking.timeAt|date('H:i:s') : '' }}</td>
+                            <td>{{ booking.beginAt ? booking.beginAt|date('Y-m-d') : '' }}</td>
+                            <td>{{ booking.beginAt ? booking.beginAt|date('H:i') : '' }}</td>
                             <td>{{ booking.title }}</td>
                             <td>
                                 <a href="{{ path('booking_show', {'id': booking.id}) }}">show</a>
                                 <a href="{{ path('booking_edit', {'id': booking.id}) }}">edit</a>
+                                <a href="{{ path('admin_booking_delete', {'id': booking.id}) }}">delete</a>
                             </td>
                         </tr>
                     {% else %}

@@ -14,7 +14,7 @@
   <body class="layout with-sidenav">
     <header>
       <nav class="navbar shadow-1 airforce dark-4 txt-white txt-light-2">
-        <a href="{{ path('admin') }}" class="navbar-brand">espace administrateur</a>
+        <a href="{{ path('app_admin') }}" class="navbar-brand">espace administrateur</a>
         <div class="navbar-menu ml-auto">
           <a class="navbar-link" href="{{path('home') }}">Accueil</a>
           <a class="navbar-link" href="{{path('home')}}#about">A propos</a>
@@ -31,7 +31,7 @@
         <button data-target="example-sidenav" class="sidenav-trigger"><i class="fas fa-times"></i></button>
         <img class="sidenav-logo dropshadow-1" src="your_img_path" alt="Logo" />
       </div> #}
-      <a href="{{ path('admin') }}" class="sidenav-link active">Accueil</a>
+      <a href="{{ path('app_admin') }}" class="sidenav-link active">Accueil</a>
       <a href="{{ path('admin_booking') }}" class="sidenav-link">Voir les réservations</a>
       <a href="{{ path('admin_service') }}" class="sidenav-link">Voir les services</a>
       <a href="{{ path('admin_user') }}" class="sidenav-link">Liste des utilisateurs</a>

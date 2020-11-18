@@ -3,12 +3,13 @@
 namespace App\Controller;
 
 use App\Entity\Booking;
+use App\Entity\Services;
 use App\Form\BookingType;
 use App\Repository\BookingRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/booking")
@@ -18,9 +19,21 @@ class BookingController extends AbstractController
     /**
      * @Route("/calendar", name="booking_calendar", methods={"GET"})
      */
-    public function calendar(): Response
+    public function calendar(BookingRepository $bookingRepository): Response
     {
-        return $this->render('booking/calendar.html.twig');
+        $events = $bookingRepository->findAll();
+        
+        $rdv = [];
+        foreach($events as $event){
+            $rdv[]= [
+                // 'id' => $event->getId(),
+                'start' =>$event->getBeginAt()->format('Y-m-d H:i'),
+                'title' => $event->getTitle(),
+            ];
+        }
+
+        $data = json_encode($rdv);
+        return $this->render('booking/calendar.html.twig', compact('data'));
     }
 
     /**
@@ -34,12 +47,17 @@ class BookingController extends AbstractController
         $form->handleRequest($request);
         $booking->setUsers($this->getUser()); 
 
+        // $data = getBeginAt();
         if ($form->isSubmitted() && $form->isValid()) {
+
+            // if(!$data){
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($booking);
             $entityManager->flush();
 
-            return $this->redirectToRoute('booking_index');
+            return $this->redirectToRoute('booking_calendar');
+            
+           
         }
 
         return $this->render('booking/new.html.twig', [

@@ -21,8 +21,8 @@
                <tbody>
                 {% for test in app.user.bookings %}
                    <tr>
-                       <td>{{ test.beginAt|date('Y-m-d') }}</td>
-                       <td>{{ test.TimeAt|date('H:i:s') }}</td>
+                       <td>{{ test.beginAt|date('d-m-Y') }}</td>
+                       <td>{{ test.beginAt|date('H:i') }}</td>
                        <td>{{ test.title }}</td>
                        <td><a href="{{ path('user_booking_edit', {'id': test.id}) }}">Modifier</a></td>
                        <td><a href="{{ path('user_booking_delete', {'id': test.id}) }}">Supprimer</a></td>
