@@ -6,39 +6,70 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-8 offset-2">
+            <div class="col-md-8 offset-2 m-auto">
 
                 <h1 class="pt-5 text-center">Liste des utilisateurs</h1>
 
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Prénom</th>
-                            <th>Email</th>
-                            <th>Rôle</th>
-                            <th>actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {% for user in users %}
-                        <tr>
-                            <td>{{ user.name}}</td>
-                            <td>{{ user.email }}</td>
-                            <td>{{ user.roles|join(' + ')|lower}}</td>
-                            <td>
-                                <a href="{{ path('admin_user_update', {'id':user.id}) }}">Modifier</a>
-                                <a href="{{ path('admin_user_delete', {'id':user.id}) }}">Supprimer</a>
-                            </td>
-                        </tr>
-                    {% else %}
-                        <tr>
-                            <td colspan="6">no records found</td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
+                 <div class="row">
+                    <div class="col-4 col-md-2 text-center">
+                        <h4>Prénom</h4>
+                    </div>
+                    <div class="col-4 col-md-4 text-center">
+                        <h4>Email</h4>
+                    </div>
+                    <div class="col-4 col-md-2 text-center">
+                        <h4>Rôle</h4>
+                    </div>
+                </div>
+                <hr>
+
+                {% for user in users %} 
+                    <div class="row">
+                        <div class="col-4 col-md-2 text-center">
+                            <p>{{ user.name }}</p>
+                        </div>
+                        <div class="col-4 col-md-4 text-center">
+                            <p class="overflow-auto">{{ user.email }}</p>
+                        </div>
+                        <div class="col-4 col-md-2 text-center">
+                            <p>{{ user.roles|join(' + ')|lower}}</p>
+                        </div>
+                        <div class="col-12 col-md-4 text-center">
+                            <a class="linkAdmin" href="{{ path('admin_user_update', {'id':user.id}) }}">
+                                <button type="button" class="btn btn-success">
+                                    Modifier
+                                </button>
+                            </a>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Modal">
+                                Supprimer
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="ModalLabel">Attention</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Vous allez supprimer l'utilisateur</p>
+                                            <p>Voulez-vous continuer ?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success" data-dismiss="modal">Fermer</button>
+                                             <a class="linkModal" href="{{ path('admin_user_delete', {'id': user.id}) }}"><button type="button" class="btn btn-success">Supprimer</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                {% endfor %}    
             </div>
         </div>
     </div>
-
 {% endblock %}

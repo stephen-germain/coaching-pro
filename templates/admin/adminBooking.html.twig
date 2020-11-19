@@ -5,42 +5,75 @@
 {% block body %}
     <div class="container">
         <div class="row">
-            <div class="col-md-8 offset-2">
+            <div class="col-md-8 offset-2 m-auto">
 
                 <h1 class="pt-5 text-center">Les réservations</h1>
+                <div class="row">
+                    <div class="col-3 col-md-1 text-center">
+                        <h4>Id</h4>
+                    </div>
+                    <div class="col-3 col-md-2 text-center">
+                        <h4>Jour</h4>
+                    </div>
+                    <div class="col-3 col-md-2 text-center">
+                        <h4>Heure</h4>
+                    </div>
+                    <div class="col-3 col-md-3 text-center">
+                        <h4>Activités</h4>
+                    </div>
+                </div>
+                <hr>
 
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Jour</th>
-                            <th>Heure</th>
-                            <th>Activités</th>
-                            <th>actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {% for booking in bookings %}
-                        <tr>
-                            <td>{{ booking.id }}</td>
-                            <td>{{ booking.beginAt ? booking.beginAt|date('Y-m-d') : '' }}</td>
-                            <td>{{ booking.beginAt ? booking.beginAt|date('H:i') : '' }}</td>
-                            <td>{{ booking.title }}</td>
-                            <td>
-                                <a href="{{ path('booking_show', {'id': booking.id}) }}">show</a>
-                                <a href="{{ path('booking_edit', {'id': booking.id}) }}">edit</a>
-                                <a href="{{ path('admin_booking_delete', {'id': booking.id}) }}">delete</a>
-                            </td>
-                        </tr>
-                    {% else %}
-                        <tr>
-                            <td colspan="6">no records found</td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-
-                <a href="{{ path('booking_new') }}">Ajouter un rendez-vous</a>
+                {% for booking in bookings %}
+                    <div class="row">
+                        <div class="col-3 col-md-1 text-center">
+                            <p>{{ booking.id }}</p>
+                        </div>
+                        <div class="col-3 col-md-2 text-center">
+                            <p>{{ booking.beginAt ? booking.beginAt|date('Y-m-d') : '' }}</p>
+                        </div>
+                        <div class="col-3 col-md-2 text-center">
+                            <p>{{ booking.beginAt ? booking.beginAt|date('H:i') : '' }}</p>
+                        </div>
+                        <div class="col-3 col-md-3 text-center">
+                            <p>{{ booking.title }}</p>
+                        </div>
+                        <div class="col-12 col-md-4 text-center">
+                            <a class="linkAdmin" href="{{ path('admin_booking_update', {'id': booking.id}) }}">
+                                <button type="button" class="btn btn-success">
+                                    Modifier
+                                </button>
+                            </a>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Modal">
+                                Supprimer
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="ModalLabel">Attention</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Vous allez supprimer la réservation</p>
+                                            <p>Voulez-vous continuer ?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success" data-dismiss="modal">Fermer</button>
+                                            <a class="linkModal" href="{{ path('admin_booking_delete', {'id': booking.id}) }}"><button type="button" class="btn btn-success">Supprimer</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                {% endfor %}
+                <a class="linkModal" href="{{ path('admin_booking_new') }}"><button type="button" class="btn btn-success">Ajouter un rendez-vous</button></a>
             </div>
         </div>
     </div>

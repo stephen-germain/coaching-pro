@@ -1,0 +1,23 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Réservation{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-2">
+
+                <h1 class="pt-5 text-center">Réservations</h1>
+
+                {{ form_start(formBooking) }}
+                    {{ form_widget(formBooking) }}
+                    <button class="btn">{{ button_label|default('Valider') }}</button>
+                {{ form_end(formBooking) }}
+            </div>
+        </div>
+    </div>
+         
+
+{% endblock %}
+
+

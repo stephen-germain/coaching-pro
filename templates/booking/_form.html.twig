@@ -2,28 +2,3 @@
     {{ form_widget(form) }}
     <button class="btn">{{ button_label|default('Valider') }}</button>
 {{ form_end(form) }}
-
-{% block javascripts %}
-     <script>
-        $(document).ready(function() {
-            // you may need to change this code if you are not using Bootstrap Datepicker
-            $('.js-datepicker').datepicker({
-                format: 'yyyy-mm-dd',
-                changeMonth: true,
-                changeYear: true,
-                minDate: 0
-            });
-            $('.timepicker').timepicker({
-                timeFormat: 'h:mm',
-                interval: 60,
-                minTime: '10',
-                maxTime: '6:00pm',
-                defaultTime: '11',
-                startTime: '10:00',
-                dynamic: false,
-                dropdown: true,
-                scrollbar: true
-            });
-        });
-    </script>
-{% endblock %}

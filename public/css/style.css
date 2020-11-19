@@ -20,7 +20,11 @@ h1, h2, h3, h4, h5, h6, p{
     font-size: revert;
 }
 
-.bouton1{
+a{
+  color: #0000;
+}
+
+.buttonHomePage{
     border: 1px solid white;
     color: white;
     display: inline-block;
@@ -31,7 +35,7 @@ h1, h2, h3, h4, h5, h6, p{
     transition: all 0.3s ease-in 0s;
 }
 
-.bouton1:hover{
+.buttonHomePage:hover{
     text-decoration: none;
     background-color: white;
     color: #28a745;
@@ -60,9 +64,13 @@ h1, h2, h3, h4, h5, h6, p{
   margin: -100px 0 0; 
 }
 
-/*****************
-****** MENU ******
-******************/
+.linkModal{
+  color: #ffff;
+}
+
+.linkAdmin:hover{
+  text-decoration: none;
+}
 
 /*****************
 ** PRESENTATION **
@@ -79,7 +87,6 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 /* animation */
-
 .heading{
   animation-delay: 200ms;
 }
@@ -99,8 +106,6 @@ h1, h2, h3, h4, h5, h6, p{
       top: -5vh;
     }
 }
-
-
 
 @media all and (min-width: 992px){
     .heading{
@@ -141,7 +146,6 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 /*Animation*/
-
 .about-animation{
   visibility: hidden;
 }
@@ -206,6 +210,7 @@ h1, h2, h3, h4, h5, h6, p{
     visibility: visible;
   }
 }
+
 /*****************
 ***** SERVICE ****
 ******************/
@@ -230,7 +235,6 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 /* animation */
-
 #service .size-headband{
   visibility: hidden;
   animation-duration: 1500ms;
@@ -281,21 +285,19 @@ h1, h2, h3, h4, h5, h6, p{
 ******************/
 
 #contact-image{
-    
-    padding-top: 15%;
-    padding-bottom: 15%;
-    background-image:url('../img/training-828732_1280.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center center;
+  padding-top: 15%;
+  padding-bottom: 15%;
+  background-image:url('../img/training-828732_1280.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
 }
 
 .size-headband2{
   padding: 25px 0px 25px 0px;
 }
 /* animation */
-
 .size-headband2{
   visibility: hidden;
   animation-duration: 1500ms;
@@ -533,23 +535,28 @@ textarea.input3 {
 ******************/
 
 #scrollUp{
-    padding-bottom: 15px;
+  padding-bottom: 15px;
 }
 #scrollUp h5{
-    margin: 0;
-    font-weight: normal;
+  margin: 0;
+  font-weight: normal;
 }
 .chevronUp{
-    font-size: 25px;
-    margin: 20px;
-    height: 30px;
-    color: #fff;
+  font-size: 25px;
+  margin: 20px;
+  height: 30px;
+  color: #fff;
 }
 .chevronUp:hover{
-    font-size: 30px;
+  font-size: 30px;
 }
 
-  
 /*****************
 ** PAGE BOOKING **
 ******************/
+
+/*****************
+** ADMIN BOOKING **
+******************/
+
+
