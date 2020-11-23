@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    
+    {% block title %}Erreur 403{% endblock %}
+
+     <div class="container-fluid">
+        <div class="col-12">
+            <div id="notfound">
+		        <div class="notfound">
+			        <div class="notfound-404"></div>
+			        <h1>Erreur 403</h1>
+			        <h2>Accès interdit!</h2>
+			        <p>Vous n'avez pas l'autorisation d'accéder à la page demandée</p>
+			        <a href="{{ path('home') }}">Revenir a l'accueil</a>
+		        </div>
+	        </div>
+        </div>
+    </div>
+{% endblock %}

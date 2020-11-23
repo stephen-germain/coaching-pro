@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    
+    {% block title %}Erreur 404{% endblock %}
+
+     <div class="container-fluid">
+        <div class="col-12">
+            <div id="notfound">
+		        <div class="notfound">
+			        <div class="notfound-404"></div>
+			        <h1>Erreur 404</h1>
+			        <h2>Oops! Une erreur est survenue</h2>
+			        <p>La page demand&eacute;e n'existe pas</p>
+			        <a href="{{ path('home') }}">Revenir a l'accueil</a>
+		        </div>
+	        </div>
+        </div>
+    </div>
+{% endblock %}

@@ -47,7 +47,7 @@ class BookingController extends AbstractController
         $form->handleRequest($request);
         $booking->setUsers($this->getUser()); 
 
-        // $data = getBeginAt();
+        // $data = $this->getBeginAt();
         if ($form->isSubmitted() && $form->isValid()) {
 
             // if(!$data){
@@ -56,7 +56,7 @@ class BookingController extends AbstractController
             $entityManager->flush();
 
             return $this->redirectToRoute('booking_calendar');
-            
+            // }
            
         }
 

@@ -35,7 +35,7 @@ class AdminUserController extends AbstractController
             $manager->flush();
             $this->addFlash(
                 'success',
-                'Le profil à bien été modifié'
+                'L\'utilisateur à bien été modifié'
             );
 
         return $this->redirectToRoute('admin_user');
