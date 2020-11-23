@@ -3,9 +3,11 @@
 namespace App\Controller;
 
 use App\Form\EditProfilType;
+use App\Form\ResetPasswordType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class UserProfilController extends AbstractController
 {
@@ -52,9 +54,48 @@ class UserProfilController extends AbstractController
     }
 
     /**
+     * @Route("/profil/updatePassword", name="profil_update_pass")
+     */
+    public function profilUpdatePass(Request $request, UserPasswordEncoderInterface $passwordEncoder)
+    {
+        $user = $this->getUser();
+        $form = $this->createForm(ResetPasswordType::class, $user);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+
+            // vérifier que les mots de passe sont identique 
+            if($request->request->get('first_options') == $request->request->get('second_options')){
+                $user->setPassword(
+                    $passwordEncoder->encodePassword(
+                        $user, $form->get('password')->getData())
+                    );
+
+                $manager = $this->getDoctrine()->getManager();
+                $manager->flush();
+                $this->addFlash(
+                    'success',
+                    'Votre mot de passe à bien été modifié');
+
+                    return $this->redirectToRoute('user_profil');
+            }
+            else{
+                $this->addFlash(
+                    'danger',
+                    'Les deux mots de passe ne sont pas identiques');
+            }
+        }
+
+        return $this->render('user_space/resetPassword.html.twig', [
+            'formPass' => $form->createView()
+        ]);
+    }
+
+    /**
      * @Route("/profil/delete", name="profil_delete")
      */
     public function profilDelete(){
+        
         $user = $this->getUser();
         $this->container->get('security.token_storage')->setToken(null);
 

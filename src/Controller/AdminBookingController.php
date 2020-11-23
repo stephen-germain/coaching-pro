@@ -21,7 +21,7 @@ class AdminBookingController extends AbstractController
         ]);
     }
 
-     /**
+    /**
      * @Route("/admin/booking/new", name="admin_booking_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
@@ -41,8 +41,6 @@ class AdminBookingController extends AbstractController
             $entityManager->flush();
 
             return $this->redirectToRoute('admin_booking');
-            
-           
         }
 
         return $this->render('admin/AdminBookingForm.html.twig', [

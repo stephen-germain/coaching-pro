@@ -1,38 +1,72 @@
 {% extends 'baseUser.html.twig' %}
 
-{% block title %}Reservation{% endblock %}
+{% block title %}Mes réservations{% endblock %}
 
 {% block body %}
     <div class="container">
         <div class="row">
-            <h2>Vos Réservations</h2>
-        </div>
-        <div class="row">
-            <div class="col-4">
-                <table class="table">
-                <thead>
-                    <tr>
-                        <th scope ="col">Jour</th>
-                        <th scope ="col">Heure</th>
-                        <th scope ="col">Activité</th>
-                        <th scope ="col">Action</th>
-                    </tr>
-                </thead>
-               <tbody>
-                {% for test in app.user.bookings %}
-                   <tr>
-                       <td>{{ test.beginAt|date('d-m-Y') }}</td>
-                       <td>{{ test.beginAt|date('H:i') }}</td>
-                       <td>{{ test.title }}</td>
-                       <td><a href="{{ path('user_booking_edit', {'id': test.id}) }}">Modifier</a></td>
-                       <td><a href="{{ path('user_booking_delete', {'id': test.id}) }}">Supprimer</a></td>
-                       {% endfor %}
-                   </tr>
-               </tbody>
-           </table> 
-         <a href="{{ path('user_booking_new') }}">Ajouter une réservation</a>
-        
-        
+            <div class="col-md-8 offset-2 m-auto">
+                <h1 class="pt-5 text-center">Mes réservations</h1>
+                <div class="row">
+                    <div class="col-3 col-md-2 text-center">
+                        <h4>Jour</h4>
+                    </div>
+                    <div class="col-3 col-md-2 text-center">
+                        <h4>Heure</h4>
+                    </div>
+                    <div class="col-3 col-md-3 text-center">
+                        <h4>Activités</h4>
+                    </div>
+                </div>
+                <hr>
+
+                {% for booking in app.user.bookings %}
+                    <div class="row">
+                        <div class="col-3 col-md-2 text-center">
+                            <p>{{ booking.beginAt ? booking.beginAt|date('Y-m-d') : '' }}</p>
+                        </div>
+                        <div class="col-3 col-md-2 text-center">
+                            <p>{{ booking.beginAt ? booking.beginAt|date('H:i') : '' }}</p>
+                        </div>
+                        <div class="col-3 col-md-3 text-center">
+                            <p>{{ booking.title }}</p>
+                        </div>
+                        <div class="col-12 col-md-4 text-center">
+                            <a class="linkAdmin" href="{{ path('user_booking_edit', {'id': booking.id}) }}">
+                                <button type="button" class="btn btn-success">
+                                    Modifier
+                                </button>
+                            </a>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Modal">
+                                Supprimer
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="ModalLabel">Attention</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Vous allez supprimer la réservation</p>
+                                            <p>Voulez-vous continuer ?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success" data-dismiss="modal">Fermer</button>
+                                            <a class="linkModal" href="{{ path('user_booking_delete', {'id': booking.id}) }}"><button type="button" class="btn btn-success">Supprimer</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                {% endfor %}
+                <a class="linkModal" href="{{ path('user_booking_new') }}"><button type="button" class="btn btn-success">Ajouter un rendez-vous</button></a>
             </div>
         </div>
     </div>

@@ -22,6 +22,14 @@ class ServiceFormType extends AbstractType
                     'placeholder' => 'ex: Prise de masse',
                 ]
             ])
+            // ->add('activity', EntityType::class,[
+            //     'class' => Services::class,
+            //     'required' => true,
+            //     'choice_label' => 'activity',
+            //     // 'attr' => [
+            //     //     'placeholder' => 'ex: Prise de masse',
+            //     // ]
+            // ])
             ->add('price', IntegerType::class, [
                 'required' => true,
                 'label' => 'Tarif',
