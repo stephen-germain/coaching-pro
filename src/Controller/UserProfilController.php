@@ -66,6 +66,7 @@ class UserProfilController extends AbstractController
 
             // vérifier que les mots de passe sont identique 
             if($request->request->get('first_options') == $request->request->get('second_options')){
+                // modifie le mot de passe encodé 
                 $user->setPassword(
                     $passwordEncoder->encodePassword(
                         $user, $form->get('password')->getData())
@@ -103,7 +104,6 @@ class UserProfilController extends AbstractController
         $manager->remove($user);
         $manager->flush();
 
-        // Ceci ne fonctionne pas avec la création d'une nouvelle session !
         $this->addFlash('success', 'Votre compte utilisateur a bien été supprimé !'); 
 
         return $this->render('user_space/deleteProfil.html.twig');

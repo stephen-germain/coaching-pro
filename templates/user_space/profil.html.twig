@@ -9,61 +9,61 @@
                 <h2 class="pt-5 text-center">Vos informations</h2>
                 <hr>
                 <div class="row">
-                        <div class="col-4 text-center offset-2">
-                            <p>Prénom</p>
-                        </div>
-                        <div class="col-4 text-center">
-                            <p>{{ app.user.name}}</p>
-                        </div>
+                    <div class="col-4 text-center offset-2">
+                        <p>Prénom</p>
+                    </div>
+                    <div class="col-4 text-center">
+                        <p>{{ app.user.name}}</p>
+                    </div>
                 </div>
                 <hr>
                  <div class="row">
-                        <div class="col-4 text-center offset-2">
-                            <p>Email</p>
-                        </div>
-                        <div class="col-4 text-center">
-                            <p>{{ app.user.email }}</p>
-                        </div>
+                    <div class="col-4 text-center offset-2">
+                        <p>Email</p>
+                    </div>
+                    <div class="col-4 text-center">
+                        <p>{{ app.user.email }}</p>
+                    </div>
                 </div>
                 <hr>
-                  <div class="row">
-                        <div class="col-12 text-center">
-                            <a href="{{ path('profil_update') }}">
-                                <button type="button" class="btn btn-success">
-                                    Modifier
-                                </button>
-                            </a>
-                            <a href="{{ path('profil_update_pass') }}">
-                                <button type="button" class="btn btn-success">
-                                    Modifier mot de passe
-                                </button>
-                            </a>
-                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Modal">
-                                Supprimer
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <a class="text-decoration-none" href="{{ path('profil_update') }}">
+                            <button type="button" class="btn btn-success">
+                                Modifier
                             </button>
-                             <!-- Modal -->
-                            <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="ModalLabel">Attention</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>Vous allez supprimer votre compte et perdre toutes vos informations</p>
-                                            <p>Voulez-vous continuer ?</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-success" data-dismiss="modal">Fermer</button>
-                                            <a class="linkModal" href="{{ path('profil_delete') }}"><button type="button" class="btn btn-success">Supprimer</button></a>
-                                        </div>
+                        </a>
+                        <a class="text-decoration-none" href="{{ path('profil_update_pass') }}">
+                            <button type="button" class="btn btn-success">
+                                Modifier mot de passe
+                            </button>
+                        </a>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Modal">
+                            Supprimer
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-dark text-white">
+                                        <h5 class="modal-title" id="ModalLabel">Attention</h5>
+                                        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Vous allez supprimer votre compte et perdre toutes vos informations</p>
+                                        <p>Voulez-vous continuer ?</p>
+                                    </div>
+                                    <div class="modal-footer bg-dark text-white">
+                                        <button type="button" class="btn btn-success" data-dismiss="modal">Fermer</button>
+                                        <a class="linkModal" href="{{ path('profil_delete') }}"><button type="button" class="btn btn-success">Supprimer</button></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>

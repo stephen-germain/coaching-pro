@@ -11,6 +11,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Rollerworks\Component\PasswordStrength\Validator\Constraints\PasswordStrength;
 
 class ResetPasswordType extends AbstractType
 {
@@ -28,11 +29,19 @@ class ResetPasswordType extends AbstractType
                 new NotBlank([
                     'message' => 'Please enter a password',
                 ]),
-                new Length([
-                    'min' => 6,
-                    'minMessage' => 'Your password should be at least {{ limit }} characters',
-                    // max length allowed by Symfony for security reasons
-                    'max' => 4096,
+                // new Length([
+                //     'min' => 6,
+                //     'minMessage' => 'Your password should be at least {{ limit }} characters',
+                //     // max length allowed by Symfony for security reasons
+                //     'max' => 4096,
+                // ]),
+                new PasswordStrength([
+                    // longueur mini
+                    'minLength' => 8,
+                    'tooShortMessage' => 'Le mot de passe doit contenir au moins 8 caractères',
+                    // force mini
+                    'minStrength' => 4,
+                    'message' => 'Le mot de passe doit contenir au moins une lettre minuscule, une lettre majuscule, un chiffre et un caractère spécial'
                 ])
             ]
         ])

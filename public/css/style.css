@@ -303,11 +303,11 @@ a{
   animation-duration: 1500ms;
 }
 
-input {
+/* input {
 	outline: none;
 	border: none;
-}
-
+} */
+/* 
 textarea {
   outline: none;
   border: none;
@@ -315,11 +315,11 @@ textarea {
 
 textarea:focus, input:focus {
   border-color: transparent !important;
-}
+} */
 
 
 /*---------------------------------------------*/
-button {
+/* button {
 	outline: none !important;
 	border: none;
 	background: transparent;
@@ -331,7 +331,7 @@ button:hover {
 
 iframe {
 	border: none !important;
-}
+} */
 
 /*//////////////////////////////////////////////////////////////////
 [ Contact 2 ]*/
@@ -367,9 +367,9 @@ iframe {
 /*------------------------------------------------------------------
 [  ]*/
 
-.contact3-form {
+/* .contact3-form {
   width: 100%;
-}
+} */
 
 .contact3-form-title {
   display: block;
@@ -386,14 +386,14 @@ iframe {
 /*------------------------------------------------------------------
 [  ]*/
 
-.wrap-input3 {
+/* .wrap-input3 {
   width: 100%;
   position: relative;
   border-bottom: 2px solid rgba(255,255,255,0.24);
   margin-bottom: 27px;
-}
+} */
 
-.input3 {
+/* .input3 {
   display: block;
   width: 100%;
   background: transparent;
@@ -402,9 +402,9 @@ iframe {
   color: #fff;
   line-height: 1.2;
   padding: 0 5px;
-}
+} */
 
-.focus-input3 {
+/* .focus-input3 {
   position: absolute;
   display: block;
   width: 100%;
@@ -412,9 +412,9 @@ iframe {
   top: 0;
   left: 0;
   pointer-events: none;
-}
+} */
 
-.focus-input3::before {
+/* .focus-input3::before {
   content: "";
   display: block;
   position: absolute;
@@ -429,11 +429,11 @@ iframe {
   transition: all 0.4s;
 
   background: #fff;
-}
+} */
 
 
 /*---------------------------------------------*/
-input.input3 {
+/* input.input3 {
   height: 45px;
 }
 
@@ -451,13 +451,13 @@ textarea.input3 {
 
 .has-val.input3 + .focus-input3::before {
   width: 100%;
-}
+} */
 
 /*------------------------------------------------------------------
 [  ]*/
 
 
-.contact3-form-btn {
+/* .contact3-form-btn {
   font-family: Poppins-Medium;
   font-size: 16px;
   color: #555555;
@@ -513,7 +513,7 @@ textarea.input3 {
 
 .contact3-form-btn:hover:before {
   opacity: 0;
-}
+} */
 
 /* Responsive */
 @media all and (max-width: 768px){
@@ -555,11 +555,9 @@ textarea.input3 {
 ** PAGE BOOKING **
 ******************/
 
-/*****************
-** ADMIN BOOKING **
-******************/
-
-
+/****************
+** ERROR PAGES **
+*****************/
 
 #notfound {
   position: relative;

@@ -192,11 +192,12 @@
             <div class="bg-contact3">
 		        <div class="container-contact3">
 			        <div class="wrap-contact3">
-				        <form class="contact3-form validate-form">
+                     {{ form_start(contactForm) }}
+				        {# <form class="contact3-form validate-form"> #}
 					        <span class="contact3-form-title">
 						        Contact Us
 					        </span>
-					        <div class="wrap-input3 validate-input">
+					       {# <div class="wrap-input3 validate-input">
 					        	<input class="input3" type="text" name="nom" placeholder="Votre nom" required>
 						        <span class="focus-input3"></span>
                             </div>
@@ -217,7 +218,8 @@
                                     Submit
                                 </button>
                             </div>
-				        </form>
+				        </form> #}
+                         {{ form_end(contactForm) }}
 			        </div>
 		        </div>
 	        </div>

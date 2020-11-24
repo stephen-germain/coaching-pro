@@ -25,15 +25,23 @@ class UserBookingController extends AbstractController
      */
     public function new(Request $request): Response
     {
+         // créer un objet
         $booking = new Booking();
+        // gérer la saisie du formulaire
         $form = $this->createForm(BookingType::class, $booking);
-        
+
+        // gérer la saisie du formulaire
         $form->handleRequest($request);
+          // pour ajouter l'id dans la clé étranger de la table Booking
         $booking->setUsers($this->getUser()); 
 
+        // Ajouter des données dans la base de données
         if ($form->isSubmitted() && $form->isValid()) {
+             // si c'est le formulaire est valide, on récuperer l'entityManager
             $entityManager = $this->getDoctrine()->getManager();
+              // pour enregistrer les données
             $entityManager->persist($booking);
+              // pour mettre à jour la base de données
             $entityManager->flush();
 
             return $this->redirectToRoute('user_booking');
@@ -41,6 +49,7 @@ class UserBookingController extends AbstractController
 
         return $this->render('user_space/newBooking.html.twig', [
             'booking' => $booking,
+            // créer la vue du formulaire
             'form' => $form->createView(),
         ]);
     }

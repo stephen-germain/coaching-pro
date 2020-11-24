@@ -16,6 +16,7 @@ class AdminUserController extends AbstractController
     public function index(UserRepository $userRepository)
     {
         return $this->render('admin/adminUser.html.twig', [
+            // Pour afficher tous les utilisateurs de la base de données
             'users' => $user = $userRepository->findAll(),
         ]);
     }
@@ -25,13 +26,21 @@ class AdminUserController extends AbstractController
      */
     public function userUpdate(UserRepository $userRepository, Request $request, $id)
     {
+        // trouver un rendez-vous par id
         $user = $userRepository->find($id);
+
+        //créer le formulaire
         $form = $this->createForm(AdminUserFormType::class, $user);
+        // gérer la saisie du formulaire
         $form->handleRequest($request);
 
+        // Ajouter des données dans la base de données
         if($form->isSubmitted() && $form->isValid()){
+            // pour récuperer l'entityManager
             $manager = $this->getDoctrine()->getManager();
+            // pour enregistrer les données
             $manager->persist($user);
+            // pour mettre à jour la base de données
             $manager->flush();
             $this->addFlash(
                 'success',
@@ -54,6 +63,7 @@ class AdminUserController extends AbstractController
         $user = $userRepository->find($id);
 
         $manager = $this->getDoctrine()->getManager();
+         // pour supprimer une donnée
         $manager->remove($user);
         $manager->flush();
 

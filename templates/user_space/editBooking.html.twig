@@ -1,12 +1,12 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseUser.html.twig' %}
 
 {% block title %}Modifier ma réservation{% endblock %}
 
 {% block body %}
-    <div class="container pt-5">
+    <div class="container">
         <div class="row">
-            <div class="col-4 offset-4 py-5">
-                <h1>Modifier ma réservation</h1>
+            <div class="col-12 col-lg-4 offset-2 py-3 m-auto">
+                <h2>Modifier ma réservation</h2>
 
                 {{ include('booking/_form.html.twig', {'button_label': 'valider'}) }}
 

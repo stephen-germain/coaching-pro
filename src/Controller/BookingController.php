@@ -21,17 +21,20 @@ class BookingController extends AbstractController
      */
     public function calendar(BookingRepository $bookingRepository): Response
     {
+        // Pour afficher tous les utilisateurs de la base de données
         $events = $bookingRepository->findAll();
         
         $rdv = [];
+
+        // Boucle pour mettre dans un tableau les données 
         foreach($events as $event){
             $rdv[]= [
-                // 'id' => $event->getId(),
                 'start' =>$event->getBeginAt()->format('Y-m-d H:i'),
                 'title' => $event->getTitle(),
             ];
         }
 
+        // on encode les données en Json pour les afficher sur le calendrier
         $data = json_encode($rdv);
         return $this->render('booking/calendar.html.twig', compact('data'));
     }
@@ -41,27 +44,34 @@ class BookingController extends AbstractController
      */
     public function new(Request $request): Response
     {
+        // créer un objet
         $booking = new Booking();
+         // créer le formulaire
         $form = $this->createForm(BookingType::class, $booking);
-        
+        // gérer la saisie du formulaire
         $form->handleRequest($request);
+          // pour ajouter l'id dans la clé étranger de la table Booking
         $booking->setUsers($this->getUser()); 
 
         // $data = $this->getBeginAt();
+         // Ajouter des données dans la base de données
         if ($form->isSubmitted() && $form->isValid()) {
 
             // if(!$data){
+             // si c'est le formulaire est valide, on récuperer l'entityManager
             $entityManager = $this->getDoctrine()->getManager();
+            // pour enregistrer les données
             $entityManager->persist($booking);
+            // pour mettre à jour la base de données
             $entityManager->flush();
 
             return $this->redirectToRoute('booking_calendar');
             // }
-           
         }
 
         return $this->render('booking/new.html.twig', [
             'booking' => $booking,
+             // créer la vue du formulaire
             'form' => $form->createView(),
         ]);
     }
@@ -103,6 +113,7 @@ class BookingController extends AbstractController
     {
         if ($this->isCsrfTokenValid('delete'.$booking->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
+
             $entityManager->remove($booking);
             $entityManager->flush();
         }

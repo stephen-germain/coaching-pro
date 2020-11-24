@@ -47,10 +47,10 @@
                             <!-- Modal -->
                             <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
+                                    <div class="modal-content ">
+                                        <div class="modal-header bg-dark text-white">
                                             <h5 class="modal-title" id="ModalLabel">Attention</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
@@ -58,7 +58,7 @@
                                             <p>Vous allez supprimer l'utilisateur</p>
                                             <p>Voulez-vous continuer ?</p>
                                         </div>
-                                        <div class="modal-footer">
+                                        <div class="modal-footer bg-dark">
                                             <button type="button" class="btn btn-success" data-dismiss="modal">Fermer</button>
                                              <a class="linkModal" href="{{ path('admin_user_delete', {'id': user.id}) }}"><button type="button" class="btn btn-success">Supprimer</button></a>
                                         </div>

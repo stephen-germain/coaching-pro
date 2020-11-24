@@ -13,6 +13,7 @@ class ReserveController extends AbstractController
      */
     public function index(ServicesRepository $servicesRepository)
     {
+        // Pour afficher tous les services de la base de données
         $services = $servicesRepository->findAll();
 
         return $this->render('reserve/reserve.html.twig', [

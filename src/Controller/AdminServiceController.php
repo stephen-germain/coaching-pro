@@ -18,6 +18,7 @@ class AdminServiceController extends AbstractController
     public function index(ServicesRepository $servicesRepository): Response
     {
         return $this->render('admin/adminServices.html.twig', [
+            // Pour afficher tous les services de la base de données
             'services' => $servicesRepository->findAll(),
         ]);
     }
@@ -27,15 +28,22 @@ class AdminServiceController extends AbstractController
      */
     public function createService(Request $request)
     {
+        // créer un objet
         $service = new Services();
 
+         // créer le formulaire
         $form = $this->createform(ServiceFormType::class, $service);
+        // gérer la saisie du formulaire
         $form->handleRequest($request);
 
+         // Ajouter des données dans la base de données
         if($form->isSubmitted()){
             if($form->isValid()){
+                // si c'est le formulaire est valide, on récuperer l'entityManager
                 $manager = $this->getDoctrine()->getManager();
+                // pour enregistrer les données
                 $manager->persist($service);
+                // pour mettre à jour la base de données
                 $manager->flush();
                 $this->addFlash(
                     'succes',
@@ -51,6 +59,7 @@ class AdminServiceController extends AbstractController
             return $this->redirectToRoute('admin_service'); 
         }
         return $this->render('admin/adminServiceForm.html.twig', [
+             // créer la vue du formulaire
             'formService' => $form ->createView()
         ]);
     }
@@ -59,6 +68,7 @@ class AdminServiceController extends AbstractController
      */
     public function updateService(ServicesRepository $servicesRepository, Request $request, $id)
     {
+        // trouver un service par id
         $service = $servicesRepository->find($id);
         $form = $this->createForm(ServiceFormType::class, $service);
         $form->handleRequest($request);
@@ -88,6 +98,7 @@ class AdminServiceController extends AbstractController
         $service = $servicesRepository->find($id);
 
         $manager = $this->getDoctrine()->getManager();
+        // pour supprimer une donnée
         $manager->remove($service);
         $manager->flush();
 
