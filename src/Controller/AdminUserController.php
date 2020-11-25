@@ -69,7 +69,7 @@ class AdminUserController extends AbstractController
 
         $this->addFlash(
             'success',
-            'L\utilisateur à bien été supprimé'
+            'L\'utilisateur à bien été supprimé'
         );
 
         return $this->redirectToRoute('admin_user');

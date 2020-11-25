@@ -24,6 +24,35 @@ a{
   color: #0000;
 }
 
+#presentation, #reservation{
+  padding:100px 80px 80px 80px;
+  height: 80vh;
+  /* background-image:url('../img/kettlebell-3293473_1280.jpg');  */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center; 
+}
+
+#about-image, #service-image, #contact-image, #reservationbis, #calendar-image{
+  padding-top: 15%;
+  padding-bottom: 15%;
+  /* background-image:url('../img/sport-2264825_1280.jpg'); */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+} 
+
+/* Responsive */
+@media all and (max-width: 905px){
+  #presentation, #reservation{
+      background-size: contain;
+      background-position: 0% 0px;
+      height: 25vh;
+  }
+}
+
 .buttonHomePage{
     border: 1px solid white;
     color: white;
@@ -77,13 +106,13 @@ a{
 ******************/
 
 #presentation{
-    padding:100px 80px 80px 80px;
-    height: 80vh;
+    /* padding:100px 80px 80px 80px;
+    height: 80vh; */
     background-image:url('../img/kettlebell-3293473_1280.jpg'); 
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-position: center center; 
+    background-position: center center;  */
 }
 
 /* animation */
@@ -92,13 +121,13 @@ a{
 }
 
 /* Responsive */
-@media all and (max-width: 905px){
+/* @media all and (max-width: 905px){
     #presentation{
         background-size: contain;
         background-position: 0% 0px;
         height: 25vh;
     }
-}
+} */
 
 @media all and (max-width: 991px){
     .heading{
@@ -119,13 +148,13 @@ a{
 ******************/
 
 #about-image{
-    padding-top: 15%;
-    padding-bottom: 15%;
+    /* padding-top: 15%;
+    padding-bottom: 15%; */
     background-image:url('../img/sport-2264825_1280.jpg');
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-position: center center;
+    background-position: center center; */
 } 
 .box-white{
     background-color: white;
@@ -216,13 +245,13 @@ a{
 ******************/
 
 #service-image{
-    padding-top: 15%;
-    padding-bottom: 15%;
+    /* padding-top: 15%;
+    padding-bottom: 15%; */
     background-image:url('../img/dumbbell-1966702_1280.jpg');
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-position: center center;
+    background-position: center center; */
 }
 
 .pad-service{
@@ -285,13 +314,13 @@ a{
 ******************/
 
 #contact-image{
-  padding-top: 15%;
-  padding-bottom: 15%;
+  /* padding-top: 15%;
+  padding-bottom: 15%; */
   background-image:url('../img/training-828732_1280.jpg');
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-position: center center;
+  background-position: center center; */
 }
 
 .size-headband2{
@@ -302,39 +331,6 @@ a{
   visibility: hidden;
   animation-duration: 1500ms;
 }
-
-/* input {
-	outline: none;
-	border: none;
-} */
-/* 
-textarea {
-  outline: none;
-  border: none;
-}
-
-textarea:focus, input:focus {
-  border-color: transparent !important;
-} */
-
-
-/*---------------------------------------------*/
-/* button {
-	outline: none !important;
-	border: none;
-	background: transparent;
-}
-
-button:hover {
-	cursor: pointer;
-}
-
-iframe {
-	border: none !important;
-} */
-
-/*//////////////////////////////////////////////////////////////////
-[ Contact 2 ]*/
 
 .container-contact3 {
   width: 100%;  
@@ -348,7 +344,6 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  
 }
 
 .wrap-contact3 {
@@ -363,14 +358,6 @@ iframe {
   padding: 72px 55px 65px 55px;
 }
 
-
-/*------------------------------------------------------------------
-[  ]*/
-
-/* .contact3-form {
-  width: 100%;
-} */
-
 .contact3-form-title {
   display: block;
   font-family: Poppins-Bold;
@@ -381,139 +368,6 @@ iframe {
   text-transform: uppercase;
   padding-bottom: 70px;
 }
-
-
-/*------------------------------------------------------------------
-[  ]*/
-
-/* .wrap-input3 {
-  width: 100%;
-  position: relative;
-  border-bottom: 2px solid rgba(255,255,255,0.24);
-  margin-bottom: 27px;
-} */
-
-/* .input3 {
-  display: block;
-  width: 100%;
-  background: transparent;
-  font-family: Poppins-Regular;
-  font-size: 15px;
-  color: #fff;
-  line-height: 1.2;
-  padding: 0 5px;
-} */
-
-/* .focus-input3 {
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-} */
-
-/* .focus-input3::before {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
-
-  background: #fff;
-} */
-
-
-/*---------------------------------------------*/
-/* input.input3 {
-  height: 45px;
-}
-
-
-textarea.input3 {
-  min-height: 115px;
-  padding-top: 13px;
-  padding-bottom: 13px;
-}
-
-
-.input3:focus + .focus-input3::before {
-  width: 100%;
-}
-
-.has-val.input3 + .focus-input3::before {
-  width: 100%;
-} */
-
-/*------------------------------------------------------------------
-[  ]*/
-
-
-/* .contact3-form-btn {
-  font-family: Poppins-Medium;
-  font-size: 16px;
-  color: #555555;
-  line-height: 1.2;
-  text-transform: uppercase;
-
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 15px;
-  min-width: 120px;
-  height: 50px;
-  border-radius: 2px;
-  position: relative;
-  z-index: 1;
-  background: #80c64a;
-  background: -webkit-linear-gradient(-135deg, #56ab2f, #a8e063);
-  background: -o-linear-gradient(-135deg, #56ab2f, #a8e063);
-  background: -moz-linear-gradient(-135deg, #56ab2f, #a8e063);
-  background: linear-gradient(-135deg, #56ab2f, #a8e063);
-
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
-}
-
-.contact3-form-btn::before {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: -1;
-  border-radius: 2px;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: #fff;
-  opacity: 1;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
-}
-
-.contact3-form-btn:hover {
-  color: #fff;
-}
-
-.contact3-form-btn:hover:before {
-  opacity: 0;
-} */
 
 /* Responsive */
 @media all and (max-width: 768px){
@@ -551,9 +405,57 @@ textarea.input3 {
   font-size: 30px;
 }
 
+/* Footer bottom */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /*Margin bottom by footer height*/
+  margin-bottom: 60px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /*Set the fixed height of the footer here*/
+  
+}
+
+footer h5{
+  font-size: 0.83em;
+}
+
+/*********************
+***** RESERVATION ****
+*********************/
+
+#reservation{
+  /* padding:100px 80px 80px 80px;
+  height: 80vh; */
+  background-image:url('../img/sport-2260736_1280.jpg');
+  /* background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;  */
+}
+
+#reservationbis{
+  background-image:url('../img/sport-2250970_1280.jpg'); 
+}
+
 /*****************
-** PAGE BOOKING **
+**** CALENDAR ****
 ******************/
+
+#calendar-image{
+  background-image:url('../img/kettlebell-3293478_1920.jpg'); 
+}
+
+.fc{
+  background-color: whitesmoke;
+}
 
 /****************
 ** ERROR PAGES **
@@ -649,3 +551,4 @@ textarea.input3 {
     padding-top: 110px;
   }
 }
+

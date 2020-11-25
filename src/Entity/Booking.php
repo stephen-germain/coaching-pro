@@ -2,11 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\BookingRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\BookingRepository;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=BookingRepository::class)
+ * @UniqueEntity(fields={"beginAt"}, message="Cette plage horaire est déjà réservée")
  */
 class Booking
 {

@@ -38,31 +38,11 @@
                                     Modifier
                                 </button>
                             </a>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Modal">
-                                Supprimer
-                            </button>
-                            <!-- Modal -->
-                            <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header bg-dark text-white">
-                                            <h5 class="modal-title" id="ModalLabel">Attention</h5>
-                                            <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>Vous allez supprimer le service</p>
-                                            <p>Voulez-vous continuer ?</p>
-                                        </div>
-                                        <div class="modal-footer bg-dark">
-                                            <button type="button" class="btn btn-success" data-dismiss="modal">Fermer</button>
-                                            <a class="linkModal" href="{{ path('service_delete', {'id': service.id}) }}"><button type="button" class="btn btn-success">Supprimer</button></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <a href="{{ path('admin_user_delete', {'id': service.id}) }}" onclick="return confirm('Voulez-vous supprimer ce service?')">
+                                <button type="button" class="btn btn-success">
+                                    Supprimer
+                                </button>
+                            </a>
                         </div>
                     </div>
                     <hr>
