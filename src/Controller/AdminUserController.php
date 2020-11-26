@@ -36,6 +36,9 @@ class AdminUserController extends AbstractController
 
         // Ajouter des données dans la base de données
         if($form->isSubmitted() && $form->isValid()){
+            $data = $form->getData();
+            // echapper les caractères speciaux
+            $user->setName(strip_tags($data->getName()));
             // pour récuperer l'entityManager
             $manager = $this->getDoctrine()->getManager();
             // pour enregistrer les données

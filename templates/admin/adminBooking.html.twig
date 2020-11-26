@@ -44,7 +44,7 @@
                                     Modifier
                                 </button>
                             </a>
-                            <a href="{{ path('admin_user_delete', {'id': booking.id}) }}" onclick="return confirm('Voulez-vous supprimer ce rendez-vous?')">
+                            <a href="{{ path('admin_booking_delete', {'id': booking.id}) }}" onclick="return confirm('Voulez-vous supprimer ce rendez-vous?')">
                                 <button type="button" class="btn btn-success">
                                     Supprimer
                                 </button>
@@ -53,7 +53,7 @@
                     </div>
                     <hr>
                 {% endfor %}
-                <a class="linkModal" href="{{ path('admin_booking_new') }}"><button type="button" class="btn btn-success">Ajouter un rendez-vous</button></a>
+                {# <a class="linkModal" href="{{ path('admin_booking_new') }}"><button type="button" class="btn btn-success">Ajouter un rendez-vous</button></a> #}
             </div>
         </div>
     </div>

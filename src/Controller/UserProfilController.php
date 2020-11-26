@@ -31,6 +31,10 @@ class UserProfilController extends AbstractController
         if($form->isSubmitted()){
 
             if($form->isValid()){
+                $data = $form->getData();
+                // echapper les caractères speciaux
+                $user->setName(strip_tags($data->getName()));
+
                 $manager = $this->getDoctrine()->getManager();
                 $manager->persist($user);
                 $manager->flush();

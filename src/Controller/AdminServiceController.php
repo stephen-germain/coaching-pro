@@ -39,6 +39,10 @@ class AdminServiceController extends AbstractController
          // Ajouter des données dans la base de données
         if($form->isSubmitted()){
             if($form->isValid()){
+
+                $data = $form->getData();
+                // echapper les caractères speciaux
+                $service->setActivity(strip_tags($data->getActivity()));
                 // si c'est le formulaire est valide, on récuperer l'entityManager
                 $manager = $this->getDoctrine()->getManager();
                 // pour enregistrer les données
@@ -74,6 +78,9 @@ class AdminServiceController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
+            $data = $form->getData();
+            // echapper les caractères speciaux
+            $service->setActivity(strip_tags($data->getActivity()));
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($service);
             $manager->flush();
