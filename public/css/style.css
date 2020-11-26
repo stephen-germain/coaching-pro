@@ -388,16 +388,16 @@ a{
 ***** FOOTER ****
 ******************/
 
-#scrollUp{
+/* #scrollUp{
   padding-bottom: 15px;
-}
+} */
 #scrollUp h5{
   margin: 0;
   font-weight: normal;
 }
 .chevronUp{
   font-size: 25px;
-  margin: 20px;
+  margin: 7px;
   height: 30px;
   color: #fff;
 }
@@ -420,7 +420,6 @@ footer {
   bottom: 0;
   width: 100%;
   /*Set the fixed height of the footer here*/
-  
 }
 
 footer h5{

@@ -21,7 +21,7 @@ class BookingController extends AbstractController
      */
     public function calendar(BookingRepository $bookingRepository): Response
     {
-        // Pour afficher tous les utilisateurs de la base de données
+        // Pour aller chercher tous les rdv de la base de données
         $events = $bookingRepository->findAll();
         
         $rdv = [];

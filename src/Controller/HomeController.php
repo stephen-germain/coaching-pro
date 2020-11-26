@@ -51,4 +51,28 @@ class HomeController extends AbstractController
             'contactForm' => $form->createView()
         ]);
     }
+
+    /**
+     * @Route("/cgu", name="cgu")
+     */
+    public function cgu()
+    {
+        return $this->render('home/cgu.html.twig');
+    }
+
+    /**
+     * @Route("/mentions-legales", name="mentions-legales")
+     */
+    public function mentions()
+    {
+        return $this->render('home/mentionsLegales.html.twig');
+    }
+
+    /**
+     * @Route("/politique-de-confidentialité", name="politique-confidentialite")
+     */
+    public function politique()
+    {
+        return $this->render('home/politiqueConfidentialite.html.twig');
+    }
 }
