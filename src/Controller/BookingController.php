@@ -57,7 +57,6 @@ class BookingController extends AbstractController
          // Ajouter des données dans la base de données
         if ($form->isSubmitted() && $form->isValid()) {
 
-            // if(!$data){
              // si c'est le formulaire est valide, on récuperer l'entityManager
             $entityManager = $this->getDoctrine()->getManager();
             // pour enregistrer les données
@@ -66,7 +65,7 @@ class BookingController extends AbstractController
             $entityManager->flush();
 
             return $this->redirectToRoute('booking_calendar');
-            // }
+           
         }
 
         return $this->render('booking/new.html.twig', [

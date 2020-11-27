@@ -107,9 +107,7 @@ class UserProfilController extends AbstractController
         $manager = $this->getDoctrine()->getManager();
         $manager->remove($user);
         $manager->flush();
-
-        $this->addFlash('success', 'Votre compte utilisateur a bien été supprimé !'); 
-
+        
         return $this->render('user_space/deleteProfil.html.twig');
     }
 }

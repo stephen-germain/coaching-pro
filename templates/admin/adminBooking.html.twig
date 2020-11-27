@@ -9,13 +9,13 @@
 
                 <h1 class="py-4 text-center">Les réservations</h1>
                 <div class="row">
-                    <div class="col-3 col-md-1 text-center">
-                        <h4>Id</h4>
+                    <div class="col-3 col-md-2 text-center">
+                        <h4>Prénom</h4>
                     </div>
                     <div class="col-3 col-md-2 text-center">
                         <h4>Jour</h4>
                     </div>
-                    <div class="col-3 col-md-2 text-center">
+                    <div class="col-3 col-md-1 text-center">
                         <h4>Heure</h4>
                     </div>
                     <div class="col-3 col-md-3 text-center">
@@ -26,13 +26,13 @@
 
                 {% for booking in bookings %}
                     <div class="row">
+                        <div class="col-3 col-md-2 text-center">
+                            <p>{{ booking.users.name }}</p>
+                        </div>
+                        <div class="col-3 col-md-2 text-center">
+                            <p>{{ booking.beginAt ? booking.beginAt|date('d-m-Y') : '' }}</p>
+                        </div>
                         <div class="col-3 col-md-1 text-center">
-                            <p>{{ booking.id }}</p>
-                        </div>
-                        <div class="col-3 col-md-2 text-center">
-                            <p>{{ booking.beginAt ? booking.beginAt|date('Y-m-d') : '' }}</p>
-                        </div>
-                        <div class="col-3 col-md-2 text-center">
                             <p>{{ booking.beginAt ? booking.beginAt|date('H:i') : '' }}</p>
                         </div>
                         <div class="col-3 col-md-3 text-center">
@@ -53,7 +53,6 @@
                     </div>
                     <hr>
                 {% endfor %}
-                {# <a class="linkModal" href="{{ path('admin_booking_new') }}"><button type="button" class="btn btn-success">Ajouter un rendez-vous</button></a> #}
             </div>
         </div>
     </div>

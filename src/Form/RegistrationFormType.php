@@ -24,11 +24,11 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('name', TextType::class, [
                 'label'=> 'Prénom',
-                // 'attr' => ['pattern' => $alphabet]
             ])
            
             ->add('email', EmailType::class)
             ->add('agreeTerms', CheckboxType::class, [
+                'label'=> false,
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([

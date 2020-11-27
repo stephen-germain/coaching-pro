@@ -2,6 +2,16 @@
 *** GENERAL ****
 ****************/
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body{
     margin:0;
     padding:0;
@@ -27,7 +37,6 @@ a{
 #presentation, #reservation{
   padding:100px 80px 80px 80px;
   height: 80vh;
-  /* background-image:url('../img/kettlebell-3293473_1280.jpg');  */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -37,7 +46,6 @@ a{
 #about-image, #service-image, #contact-image, #reservationbis, #calendar-image{
   padding-top: 15%;
   padding-bottom: 15%;
-  /* background-image:url('../img/sport-2264825_1280.jpg'); */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -106,28 +114,13 @@ a{
 ******************/
 
 #presentation{
-    /* padding:100px 80px 80px 80px;
-    height: 80vh; */
     background-image:url('../img/kettlebell-3293473_1280.jpg'); 
-    /* background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center center;  */
 }
 
 /* animation */
 .heading{
   animation-delay: 200ms;
 }
-
-/* Responsive */
-/* @media all and (max-width: 905px){
-    #presentation{
-        background-size: contain;
-        background-position: 0% 0px;
-        height: 25vh;
-    }
-} */
 
 @media all and (max-width: 991px){
     .heading{
@@ -148,13 +141,7 @@ a{
 ******************/
 
 #about-image{
-    /* padding-top: 15%;
-    padding-bottom: 15%; */
     background-image:url('../img/sport-2264825_1280.jpg');
-    /* background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center center; */
 } 
 .box-white{
     background-color: white;
@@ -189,7 +176,6 @@ a{
 .about-animation p{
   animation-duration: 1700ms;
 }
-
 
 /* Responsive */
 @media all and (max-width: 768px){
@@ -245,13 +231,7 @@ a{
 ******************/
 
 #service-image{
-    /* padding-top: 15%;
-    padding-bottom: 15%; */
     background-image:url('../img/dumbbell-1966702_1280.jpg');
-    /* background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center center; */
 }
 
 .pad-service{
@@ -288,7 +268,6 @@ a{
 }
 
 @media all and (min-width: 768px){
-
   .scale-img{
     transform: scale(1);
 }
@@ -298,6 +277,7 @@ a{
         z-index: 5; 
     }
 }
+
 @media all and (max-width: 1199px){
   #service .size-headband{
     visibility: visible;
@@ -314,13 +294,7 @@ a{
 ******************/
 
 #contact-image{
-  /* padding-top: 15%;
-  padding-bottom: 15%; */
   background-image:url('../img/training-828732_1280.jpg');
-  /* background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center center; */
 }
 
 .size-headband2{
@@ -388,9 +362,6 @@ a{
 ***** FOOTER ****
 ******************/
 
-/* #scrollUp{
-  padding-bottom: 15px;
-} */
 #scrollUp h5{
   margin: 0;
   font-weight: normal;
@@ -431,13 +402,7 @@ footer h5{
 *********************/
 
 #reservation{
-  /* padding:100px 80px 80px 80px;
-  height: 80vh; */
   background-image:url('../img/sport-2260736_1280.jpg');
-  /* background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center center;  */
 }
 
 #reservationbis{

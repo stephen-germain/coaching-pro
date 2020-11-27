@@ -1,10 +1,24 @@
-
+{% extends 'base.html.twig' %}
 
 {% block title %}Suppression{% endblock %}
 
 {% block body %}
 
-    Votre profil à bien été supprimé !
-
-    <a href="{{path('home') }}">retour accueil</a>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 my-5 py-5 text-center">
+                  Votre profil à bien été supprimé !
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                 <a href="{{path('home') }}">
+                    <button class="btn success">
+                        retour accueil
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+  
 {% endblock %}

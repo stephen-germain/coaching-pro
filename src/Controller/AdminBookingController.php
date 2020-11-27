@@ -40,14 +40,9 @@ class AdminBookingController extends AbstractController
         // pour ajouter l'id dans la clé étranger de la table Booking
         $booking->setUsers($this->getUser()); 
 
-        $data = $booking->getBeginAt();
-
-        // dd($data);
-
         // Ajouter des données dans la base de données
         if ($form->isSubmitted() && $form->isValid()) {
 
-            if(!$data){
             // pour récuperer l'entityManager
             $entityManager = $this->getDoctrine()->getManager();
 
@@ -58,14 +53,8 @@ class AdminBookingController extends AbstractController
             $entityManager->flush();
 
             return $this->redirectToRoute('admin_booking');
-            }
-            else{
-                $this->addFlash(
-                    'danger',
-                    'Existe déjà'
-                );
-            }
         }
+
         return $this->render('admin/AdminBookingForm.html.twig', [
             'booking' => $booking,
 
