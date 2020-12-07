@@ -13,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class UserBookingController extends AbstractController
 {
     /**
-     * @Route("/user/mes_reservation", name="user_booking")
+     * @Route("/user/booking/mes-reservations", name="user_booking")
      */
     public function index(): Response
     {
@@ -21,13 +21,13 @@ class UserBookingController extends AbstractController
     }
 
     /**
-     * @Route("/new_booking", name="user_booking_new", methods={"GET","POST"})
+     * @Route("/user/booking/new_booking", name="user_booking_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
          // créer un objet
         $booking = new Booking();
-        // gérer la saisie du formulaire
+        // création le formulaire à partir de BookingType
         $form = $this->createForm(BookingType::class, $booking);
 
         // gérer la saisie du formulaire
@@ -56,27 +56,36 @@ class UserBookingController extends AbstractController
 
 
     /**
-     * @Route("/{id}/edit", name="user_booking_edit", methods={"GET","POST"})
+     * @Route("/user/booking/edit-{id}", name="user_booking_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Booking $booking): Response
+    public function edit(Request $request, BookingRepository $bookings, $id): Response
     {
+        $booking = $bookings->find($id);
+
         $form = $this->createForm(BookingType::class, $booking);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $manager = $this->getDoctrine()->getManager();
+            $manager->persist($booking);
+            $manager->flush();
+
+            $this->addFlash(
+                'success',
+                'La réservation a bien été modfiée'
+            );
 
             return $this->redirectToRoute('user_booking');
         }
 
         return $this->render('user_space/editBooking.html.twig', [
-            'booking' => $booking,
+            // 'booking' => $booking,
             'form' => $form->createView(),
         ]);
     }
 
     /**
-     * @Route("/{id}", name="user_booking_delete")
+     * @Route("/user/booking/delete-{id}", name="user_booking_delete")
      */
     public function delete(Request $request, BookingRepository $booking, $id): Response
     {

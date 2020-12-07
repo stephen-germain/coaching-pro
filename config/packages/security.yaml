@@ -38,3 +38,5 @@ security:
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/user, roles: ROLE_USER }
         - { path: ^/booking, roles: ROLE_USER }
+          # catch all other URLs
+        # - { path: '^/', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }

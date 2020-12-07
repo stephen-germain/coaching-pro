@@ -13,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class AdminBookingController extends AbstractController
 {
     /**
-     * @Route("/admin/all_booking", name="admin_booking", methods={"GET"})
+     * @Route("/admin/booking/all_booking", name="admin_booking", methods={"GET"})
      */
     public function index(BookingRepository $bookingRepository): Response
     {

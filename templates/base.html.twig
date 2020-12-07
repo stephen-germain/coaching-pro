@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script type="text/javascript" src="https://cache.consentframework.com/js/pa/26259/c/uqNqn/stub" charset="utf-8"></script><script type="text/javascript" src="https://choices.consentframework.com/js/pa/26259/c/uqNqn/cmp" charset="utf-8" async></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content"Je suis coach sportif personnel qui propose un accompagnement sportif individuel avec un programme d’entrainement sur-mesure avec réservation en ligne sur le site."/>
         <title>Coach Sportif - {% block title %}base{% endblock %}</title>
-
+        
+        <!--icone dans l'onglet-->
+        <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
+        <link rel="icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
+	
         <!-- link for animation css -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
 
@@ -29,12 +35,10 @@
         ----------------------- #}
 
         <header>
-            <nav class="navbar  navbar-expand-md fixed-top navbar-dark bg-dark" id="mainNav">
+            <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark" id="mainNav">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="{{path('home') }}">Bienvenue
-                        {% if app.user%}
-                            {{app.user.name|escape}}
-                        {% endif %}
+                    <a class="navbar-brand logo" href="{{path('home') }}">
+                        <img src="{{ asset("img/newLogo3.png") }}" class="img-fluid" alt="logo">
                     </a>
                     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
                         <span></span>
@@ -97,14 +101,8 @@
         </header>
 
         {% block body %}
-
-         <a href="javascript:showAxeptioButton()"><button class="btn">
-            Cliquez-ici pour modifier vos préférences en matière de cookies
-            </button>
-        </a>
         {% endblock %}
        
-
         {# ----------------
         ----- FOOTER ------
         ---------------- #}

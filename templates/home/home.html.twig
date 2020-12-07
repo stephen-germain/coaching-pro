@@ -12,8 +12,11 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="heading animate__animated animate__zoomIn">
-                        <h1>Prénom</h1>
-                        <h2>coach sportif</h2>
+                        <h1>Bienvenue</h1>
+                        {% if app.user%}
+                            <h2>{{app.user.name|escape}}</h2>
+                        {% endif %}
+                        {# <h2>coach sportif</h2> #}
                         <a href="#contact" class="buttonHomePage">contact</a>
                     </div>
                 </div>
@@ -27,10 +30,10 @@
         <section id="about" class="headband container-fluid">
              <div class="col-md-12 text-center bg-success text-white">
                 <div class="size-headband animate__animated animate__fadeInUp">
-                    <h4 class="pb-2">a propos</h4>
+                    <h4 class="pb-2">A propos</h4>
                     <div class="divider"></div>
-                    <p class="p-3"> diplômés et ayant une carte professionnelle de coach sportif. formation PSC1 (Prévention et secours civique niveau 1)</p>
-                    <a href="#" class="buttonHomePage">en savoir plus sur moi</a>
+                    <p class="p-3"> Je suis Éducateur Sportif diplômé d’Etat :<br>
+                    Brevet Professionnel de la Jeunesse, de l’Education Populaire et du Sport (BPJEPS). <br> Je vous accompagne dans l’accomplissement de vos objectifs : perdre du poids, prendre de la masse musculaire, se remettre en forme ou améliorer vos performances sportives</p>
                 </div>
             </div> 
         </section>
@@ -42,19 +45,19 @@
                             <div class="container">
                                 <div class="row justify-content-md-center">
                                     <div class="col-md-12">
-                                         <h5>cours privé</h5>
+                                         <h5>Cours privé</h5>
                                     </div>
                                 </div>
                                 <div class="row justify-content-md-center">
                                     <div class="col-md-12">
                                         <p>
-                                            Paragraphe. Cliquez ici pour ajouter votre propre texte. Cliquez sur "Modifier Texte" ou double-cliquez ici pour ajouter votre contenu et personnaliser les polices.
+                                            Les cours privé c’est l’assurance d’atteindre vos objectifs sportifs. Perte de poids, renforcement musculaire, préparation course à pied : j'interviens sur toutes les problématiques nécessitant l’intervention d’un professionnel du sport.
                                         </p>
                                     </div>
                                 </div> 
                                 <div class="row justify-content-md-center">
                                     <div class="col-md-12">
-                                        <p>tarif l'heure</p>
+                                        <p><a class="text-decoration-none text-success" href="{{ path('reserve') }}">Voir détail</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -65,19 +68,20 @@
                             <div class="container">
                                 <div class="row justify-content-md-center">
                                     <div class="col-md-12">
-                                        <h5>cours collectif</h5>
+                                        <h5>Cours collectif</h5>
                                     </div>
                                 </div>
                                 <div class="row justify-content-md-center">
                                     <div class="col-md-12">
                                         <p>
-                                            Paragraphe. Cliquez ici pour ajouter votre propre texte. Cliquez sur "Modifier Texte" ou double-cliquez ici pour ajouter votre contenu et personnaliser les polices.
+                                            Les cours collectifs sont le meilleur moyen de mélanger sport et convivialité. A pratiquer entre amis, collègues, ou pour découvrir de nouvelles têtes, à l'extérieur ou en entreprise!
+                                            Faire du sport en groupe, c’est plus motivant, et plus facile !
                                         </p>
                                     </div>
                                 </div>
                                 <div class="row justify-content-md-center">
                                     <div class="col-md-12">
-                                        <p>tarif l'heure</p>
+                                        <p>10 € l'heure</p>
                                     </div>
                                 </div>
                             </div>
@@ -86,7 +90,7 @@
                 </div>
                 <div class="row">
                     <div class="dispo col-md-12 text-center">
-                        <button class="buttonHomePage ">voir les disponibilités</button>                                                                                         
+                        <a href="{{ path('booking_calendar') }}" class="buttonHomePage ">Voir les disponibilités</a>                                                                                         
                     </div>
                 </div>                  
             </div>
@@ -102,8 +106,8 @@
                 <div class="size-headband">
                     <h4 class="pb-2">Services proposés</h4>
                     <div class="divider"></div>
-                    <p class="p-3"> diplômés et ayant une carte professionnelle de coach sportif. formation PSC1 (Prévention et secours civique niveau 1)</p>
-                    <a href="{{path ('reserve') }}" class="buttonHomePage">réservé</a>
+                    <p class="p-3"> Je vous propose plusieurs prestations. Les séances sont ultra personnalisées ! Je prend en compte votre niveau de santé et votre niveau sportif, votre parcours sportif, vos problèmes de santé et surtout vos objectifs. Vous pouvez bien entendu cumuler les prestations pour avoir un suivi sur mesure !</p>
+                    <a href="{{path ('reserve') }}" class="buttonHomePage">réserver</a>
                 </div>
             </div> 
         </section>
@@ -113,7 +117,7 @@
                     <div class="row">
                         <div class="pad-service col-md-4">
                             <div class="scale-img card bg-dark text-white border border-success">
-                                <img src="{{ asset('img/jogging-2343558_1280.jpg') }}"  class="card-img" alt="...">
+                                <img src="{{ asset('img/jogging-2343558_1280.jpg') }}"  class="card-img" alt="homme-jogging">
                                 <div class="card-img-overlay overflow-auto">
                                     <h5 class="card-title">Cardio-training</h5>
                                     <p class="card-text ">Pour vous faire battre le coeur à cent à l'heure, stimuler votre rythme cardiaque et renforcer tout votre système cardio-vasculaire. Selon votre rythme cardiaque propre, les exercices que vous ferez seront plus ou moins intenses..</p>
@@ -122,7 +126,7 @@
                         </div>
                         <div class="pad-service col-md-4">
                             <div class="scale-img card bg-dark text-white border border-success">
-                                <img src="{{ asset('img/sport-2250970_1280.jpg') }}" class="card-img" alt="...">
+                                <img src="{{ asset('img/sport-2250970_1280.jpg') }}" class="card-img" alt="femme-abdo">
                                 <div class="card-img-overlay overflow-auto">
                                     <h5 class="card-title">Tonification musculaire</h5>
                                     <p class="card-text">La tonification musculaire est une pratique sportive destinée à augmenter la tonicité d'un muscle, c'est à dire sa résistance et son élasticité.</p>
@@ -131,10 +135,10 @@
                         </div>
                         <div class="pad-service col-md-4">
                             <div class="scale-img card bg-dark text-white border border-success">
-                                <img src="{{ asset('img/kettle-bell-5434989_1280.jpg') }}" class="card-img" alt="...">
+                                <img src="{{ asset('img/kettle-bell-5434989_1280.jpg') }}" class="card-img" alt="poids-fitness">
                                 <div class="card-img-overlay overflow-auto">
                                     <h5 class="card-title">Cross-training</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text">Le cross-training en sport et en fitness consiste à combiner des exercices faisant travailler différentes parties du corps. Ainsi, certains sports ou certaines activités ne font travailler que certaines parties du corps. Le cross-training permet d'éliminer ce déséquilibre..</p>
                                 </div>
                             </div>
                         </div>
@@ -142,16 +146,16 @@
                     <div class="row justify-content-end">
                         <div class="pad-service col-md-4">
                             <div class="scale-img card bg-dark text-white border border-success">
-                                <img src="{{ asset('img/arm-workout.jpg') }}" class="card-img" alt="...">
+                                <img src="{{ asset('img/arm-workout.jpg') }}" class="card-img" alt="barre-biceps">
                                 <div class="card-img-overlay overflow-auto">
                                     <h5 class="card-title">Prise de masse</h5>
-                                    <p class="card-text">This.</p>
+                                    <p class="card-text">La prise de masse, comme son nom l'indique, est une période dans laquelle on va prendre du poids afin d'acquérir un certain volume musculaire. La sèche quant à elle, est la période durant laquelle on va progressivement perdre de la masse graisseuse afin de rendre visible le plus possible les muscles du corps.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="pad-service col-md-4">
                             <div class="scale-img card bg-dark text-white border border-success">
-                                <img src="{{ asset('img/kettlebell-3290296_1280.jpg') }}" class="card-img" alt="...">
+                                <img src="{{ asset('img/kettlebell-3290296_1280.jpg') }}" class="card-img" alt="homme-barre-abdo">
                                 <div class="card-img-overlay overflow-auto">
                                     <h5 class="card-title">Prépartion physique</h5>
                                     <p class="card-text"> La préparation physique a pour objectif de servir la discipline que vous pratiquez. Elle permettra de développer vos qualités physiques et ainsi d’optimiser vos performances.</p>
@@ -162,7 +166,7 @@
                     <div class="row justify-content-end">
                         <div class="pad-service col-md-4">
                             <div class="scale-img card bg-dark text-white border border-success">
-                                <img src="{{ asset('img/training-828732_1280.jpg') }}" class="card-img" alt="...">
+                                <img src="{{ asset('img/training-828732_1280.jpg') }}" class="card-img" alt="femme-profil">
                                 <div class="card-img-overlay overflow-auto">
                                     <h5 class="card-title">TRX</h5>
                                     <p class="card-text">Développé par un commando de l’US Navy, le TRX ou Suspension Training permet par un jeu de sangles d’utiliser le poids de son propre corps comme un partenaire d’entraînement.</p>
@@ -172,7 +176,7 @@
                     </div>
                     <div class="row">
                         <div class="col text-center mt-5">
-                             <a href="{{ path('reserve') }}" class="buttonHomePage">+ de cours</a>
+                             <a href="{{ path('reserve') }}" class="buttonHomePage">+ de détails</a>
                         </div>
                     </div>
                 </div> 
@@ -186,9 +190,9 @@
         <section id="contact" class="headband container-fluid">
              <div class="col-md-12 text-center bg-success text-white pb-2">
                 <div class="size-headband2">
-                    <h4 class="pb-2 pt-3">contact</h4>
+                    <h4 class="pb-2 pt-3">Contact</h4>
                     <div class="divider"></div>
-                    <p class="p-3"> diplômés et ayant une carte professionnelle de coach sportif. formation PSC1 (Prévention et secours civique niveau 1)</p>
+                    <p class="p-3"> Je me tient à votre disposition pour tous renseignements. Pour des demandes spécifiques ou personnelles je vous invite à me poser vos questions par le biais du formulaire de contact ci-dessous</p>
                 </div>
             </div> 
         </section>
@@ -198,7 +202,7 @@
 			        <div class="wrap-contact3">
                         {{ form_start(contactForm) }}
 					        <span class="contact3-form-title">
-						        Contact Us
+						        Contactez moi
 					        </span>
                             {{ form_row(contactForm.nom) }}
                             {{ form_row(contactForm.prenom) }}
@@ -210,23 +214,5 @@
 		        </div>
 	        </div>
         </section>
-        <a href="javascript:showAxeptioButton()">
-            Cliquez-ici pour modifier vos préférences en matière de cookies
-        </a>
-
-         {% block javascripts %}
-        <script>
-            window.axeptioSettings = {
-                clientId: "5fbf6a4a9dfee3361cc0bf84",
-                cookiesVersion: "https://127001:8000-base",
-            };
-            (function(d, s) {
-                var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
-                e.async = true; e.src = "//static.axept.io/sdk.js";
-                t.parentNode.insertBefore(e, t);
-                })(document, "script");
-        </script>
-        {% endblock %}
-
     {% endblock %}
 

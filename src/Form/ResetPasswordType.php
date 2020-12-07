@@ -23,11 +23,11 @@ class ResetPasswordType extends AbstractType
             'invalid_message' => 'Les deux mots de passe doivent être identique',
             'options' => ['attr' => ['class' => 'password-field']],
             'required' => true,
-            'first_options'  => ['label' => 'mot de passe'],
+            'first_options'  => ['label' => 'Mot de passe'],
             'second_options' => ['label' => 'Confirmer le mot de passe'],
             'constraints' => [
                 new NotBlank([
-                    'message' => 'Please enter a password',
+                    'message' => 'Veuillez rentrer un nouveau mot de passs',
                 ]),
                 // new Length([
                 //     'min' => 6,

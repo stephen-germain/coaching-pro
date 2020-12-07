@@ -20,7 +20,7 @@ class UserProfilController extends AbstractController
     }
 
     /**
-     * @Route("/profil/update", name="profil_update")
+     * @Route("/user/profil/update", name="profil_update")
      */
     public function profilUpdate(Request $request){
 
@@ -58,7 +58,7 @@ class UserProfilController extends AbstractController
     }
 
     /**
-     * @Route("/profil/updatePassword", name="profil_update_pass")
+     * @Route("/user/profil/updatePassword", name="profil_update_pass")
      */
     public function profilUpdatePass(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
@@ -97,7 +97,7 @@ class UserProfilController extends AbstractController
     }
 
     /**
-     * @Route("/profil/delete", name="profil_delete")
+     * @Route("/user/profil/delete", name="profil_delete")
      */
     public function profilDelete(){
         

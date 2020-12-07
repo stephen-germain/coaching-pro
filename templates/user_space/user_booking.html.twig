@@ -23,10 +23,10 @@
                 {% for booking in app.user.bookings %}
                     <div class="row">
                         <div class="col-3 col-md-2 text-center">
-                            <p>{{ booking.beginAt ? booking.beginAt|date('d-m-Y') : '' }}</p>
+                            <p>{{ booking.beginAt|date('d-m-Y') }}</p>
                         </div>
                         <div class="col-3 col-md-2 text-center">
-                            <p>{{ booking.beginAt ? booking.beginAt|date('H:i') : '' }}</p>
+                            <p>{{ booking.beginAt|date('H:i') }}</p>
                         </div>
                         <div class="col-3 col-md-3 text-center">
                             <p>{{ booking.title }}</p>
@@ -38,7 +38,7 @@
                                 </button>
                             </a>
                             <a href="{{ path('user_booking_delete', {'id': booking.id}) }}" onclick="return confirm('Voulez-vous supprimer ce rendez-vous?')">
-                                <button type="button" class="btn btn-success">
+                                <button type="button" class="btn btn-dark">
                                     Supprimer
                                 </button>
                             </a>

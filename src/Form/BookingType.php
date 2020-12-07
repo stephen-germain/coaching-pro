@@ -29,6 +29,7 @@ class BookingType extends AbstractType
             ])
             // ->add('endAt')
             ->add ('title', ChoiceType::class, [
+                'label' => 'Activités',
                 'choices' => [
                     'cardio-training' => 'cardio-training',
                     'tonification musculaire' => 'tonification musculaire',
