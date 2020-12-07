@@ -34,7 +34,6 @@ class AdminUserFormType extends AbstractType
                 'expanded' => true,
                 'multiple' => true,
             ])
-            ->add('valider', SubmitType::class)
         ;
     }
 

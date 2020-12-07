@@ -14,6 +14,8 @@
                 <h1 class="py-4 text-center">Modifier le profil utilisateur</h1>
 
                 {{ form_start(formUser) }}
+                    {{ form_widget(formUser) }}
+                    <button class="btn btn-success">Valider</button>
                 {{ form_end(formUser) }}
             </div>
         </div>

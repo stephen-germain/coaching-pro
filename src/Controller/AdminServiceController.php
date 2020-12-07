@@ -49,8 +49,9 @@ class AdminServiceController extends AbstractController
                 $manager->persist($service);
                 // pour mettre à jour la base de données
                 $manager->flush();
+
                 $this->addFlash(
-                    'succes',
+                    'success',
                     'Le service à bien été rajouté'
                 );
             }
@@ -84,8 +85,9 @@ class AdminServiceController extends AbstractController
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($service);
             $manager->flush();
+
             $this->addFlash(
-                'succes',
+                'success',
                 'Le service à bien été modifié'
             );
             

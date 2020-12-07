@@ -17,7 +17,7 @@ class ServiceFormType extends AbstractType
         $builder
             ->add('activity', TextType::class,[
                 'required' => true,
-                'label' => 'nom de l\'activité',
+                'label' => 'Nom de l\'activité',
                 'attr' => [
                     'placeholder' => 'ex: Prise de masse',
                 ]
@@ -46,8 +46,6 @@ class ServiceFormType extends AbstractType
                     'min' => 0
                 ]
             ])
-
-            ->add('Valider', SubmitType::class)
         ;
     }
 

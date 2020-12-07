@@ -22,7 +22,7 @@ class BookingType extends AbstractType
         }
         $builder
         ->add('beginAt', DateTimeType::class, [
-            'label' => 'Date de début',
+            'label' => 'Date choisie',
             'date_widget' => 'single_text',
             'hours' => $hours,
             'minutes' => ["00", "30"],
