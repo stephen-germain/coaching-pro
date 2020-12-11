@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
+    <html lang="fr">
     <head>
-        <script type="text/javascript" src="https://cache.consentframework.com/js/pa/26259/c/uqNqn/stub" charset="utf-8"></script><script type="text/javascript" src="https://choices.consentframework.com/js/pa/26259/c/uqNqn/cmp" charset="utf-8" async></script>
+        <script type="text/javascript" src="https://cache.consentframework.com/js/pa/26259/c/uqNqn/stub"></script><script type="text/javascript" src="https://choices.consentframework.com/js/pa/26259/c/uqNqn/cmp" async></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content"Je suis coach sportif personnel qui propose un accompagnement sportif individuel avec un programme d’entrainement sur-mesure avec réservation en ligne sur le site."/>
+        <meta name="description" content="Je suis coach sportif personnel qui propose un accompagnement sportif individuel avec un programme d’entrainement sur-mesure avec réservation en ligne sur le site."/>
         <title>Coach Sportif - {% block title %}base{% endblock %}</title>
         
         <!--icone dans l'onglet-->
@@ -104,8 +105,15 @@
             </nav>
         </header>
 
-        {% block body %}
-        {% endblock %}
+        {% for label, messages in app.flashes(['success', 'danger']) %}
+        {% for message in messages %}
+          <div class="flash-{{ label }} p-3 fixed-top bg-{{ label }} text-white text-center">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endfor %}
+
+       {% block body %}{% endblock %}
        
         {# ----------------
         ----- FOOTER ------
@@ -117,27 +125,24 @@
                     <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
                 </svg>
             </a>
-            <h5>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 text-center py-2">
+            <div class="container textFoot">
+                <div class="row">
+                    <div class="col-md-6 text-center py-2">
                             ©2020 développé par Stephen Germain
-                        </div>
-                        <div class="col-md-6 text-center py-2">
-                            <a class="text-decoration-none text-white" href="{{ path('mentions-legales') }}">Mentions Legales</a> 
-                        </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6 text-center py-2">
-                            <a class="text-decoration-none text-white" href="{{ path('politique-confidentialite') }}">Politique de confidentialité</a>
-                        </div>
-                        <div class="col-md-6 text-center py-2">  
-                            <a class="text-decoration-none text-white" href="{{ path('cgu') }}">Conditions générale d'utilisation</a> 
-                        </div>
+                    <div class="col-md-6 text-center py-2">
+                        <a class="text-decoration-none text-white" href="{{ path('mentions-legales') }}">Mentions Legales</a> 
                     </div>
                 </div>
-            </h5>
-            
+                <div class="row">
+                    <div class="col-md-6 text-center py-2">
+                        <a class="text-decoration-none text-white" href="{{ path('politique-confidentialite') }}">Politique de confidentialité</a>
+                    </div>
+                    <div class="col-md-6 text-center py-2">  
+                        <a class="text-decoration-none text-white" href="{{ path('cgu') }}">Conditions générale d'utilisation</a> 
+                    </div>
+                </div>
+            </div>
         </footer>
          {% block javascripts %}{% endblock %}
     </body>

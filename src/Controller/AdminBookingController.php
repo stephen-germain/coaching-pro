@@ -78,7 +78,7 @@ class AdminBookingController extends AbstractController
             $manager->persist($booking);
             $manager->flush();
             $this->addFlash(
-                'succes',
+                'success',
                 'La réservation à bien été modifiée'
             );
             

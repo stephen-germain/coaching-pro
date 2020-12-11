@@ -18,8 +18,6 @@ class ReserveController extends AbstractController
 
         return $this->render('reserve/reserve.html.twig', [
             'services' => $services,
-        ]);
-           
-    
+        ]);     
     }
 }

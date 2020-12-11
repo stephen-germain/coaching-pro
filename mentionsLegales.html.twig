@@ -71,4 +71,19 @@
             <p style="text-align:justify">Les bases de données sont protégées par les dispositions de la loi du 1er juillet 1998 transposant la directive 96/9 du 11 mars 1996 relative à la protection juridique des bases de données.</p>
         </div>
     </div>
+
+     {% block javascripts %}
+        <script>
+            window.axeptioSettings = {
+                clientId: "5fbf6a4a9dfee3361cc0bf84",
+                cookiesVersion: "https://127001:8000-base",
+            };
+            (function(d, s) {
+                var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                e.async = true; e.src = "//static.axept.io/sdk.js";
+                t.parentNode.insertBefore(e, t);
+                })(document, "script");
+        </script>
+        {% endblock %}
+
 {% endblock %}
